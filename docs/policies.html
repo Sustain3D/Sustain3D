@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sustain 3D - Policies</title>
+  <meta name="description" content="Rights, access, licensing, and governance guidance for 3D repositories." />
+  <link rel="icon" href="./assets/Sustain3d_logoSmall.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="page-policies">
+  <div id="site-header"></div>
+
+  <main class="wrap">
+    <section class="card start-here">
+      <div class="next">
+        <span class="chip">You are on: Policies</span>
+        <a class="chip chip-link" href="./resources.html">Next: Resources</a>
+      </div>
+    </section>
+
+    <section class="card flow-banner goal-banner">
+      <h2>Goal</h2>
+      <p>Use written standards and policy baselines so naming, access, rights, and publication decisions stay consistent from capture through preservation and release.</p>
+    </section>
+
+    <section class="card area">
+      <h2>1) Open the policy files you actually maintain</h2>
+      <p>These policies work best when they are written as living files rather than abstract ideas. Switch between the workflow standard and registry view, then hover or click the highlighted parts.</p>
+
+      <div class="window-shell" data-tabset>
+        <div class="window-bar">
+          <div class="window-tabs">
+            <button type="button" class="window-tab" data-tab-trigger="policy-standards">workflow_standards.txt</button>
+            <button type="button" class="window-tab" data-tab-trigger="policy-registry">project_registry.json</button>
+          </div>
+          <strong class="window-title">Policy files in practice</strong>
+        </div>
+
+        <section data-tab-panel="policy-standards">
+          <div class="doc-layout" data-explainer="policy-standards">
+            <article class="doc-page doc-paper">
+              <div class="doc-heading">
+                <p class="doc-kicker">Workflow standard</p>
+                <h3>workflow_standards.txt</h3>
+                <p>Repository-wide rules that projects should follow</p>
+              </div>
+
+              <div class="doc-line">
+                <button type="button" class="doc-field" data-explainer-target="policy-file">file</button>
+                <span>Documentation/workflow_standards.txt</span>
+              </div>
+              <div class="doc-line">
+                <button type="button" class="doc-field" data-explainer-target="policy-owner">owner</button>
+                <span>Collection manager or project lead</span>
+              </div>
+              <div class="doc-line">
+                <button type="button" class="doc-field" data-explainer-target="policy-characters">character_rules</button>
+                <span>A-Z, a-z, 0-9, underscore only</span>
+              </div>
+              <div class="doc-line">
+                <button type="button" class="doc-field" data-explainer-target="policy-naming">object_naming</button>
+                <span>&lt;Collection&gt;_&lt;4digitID&gt;_&lt;ShortLabel&gt;</span>
+              </div>
+              <div class="doc-line">
+                <button type="button" class="doc-field" data-explainer-target="policy-workspace">workspace_policy</button>
+                <span>Projects are temporary; Preservation is long-term</span>
+              </div>
+              <div class="doc-line">
+                <button type="button" class="doc-field" data-explainer-target="policy-preservation">preservation_masters</button>
+                <span>&lt;ObjectID&gt;_&lt;asset&gt;_v##_pres.&lt;ext&gt;</span>
+              </div>
+              <div class="doc-line">
+                <button type="button" class="doc-field" data-explainer-target="policy-derivatives">derivative_rules</button>
+                <span>Access and print files never replace masters</span>
+              </div>
+              <div class="doc-line">
+                <button type="button" class="doc-field" data-explainer-target="policy-do-not">do_not</button>
+                <span>No ambiguous names like final.obj; no renaming after DOI assignment</span>
+              </div>
+            </article>
+
+            <div class="tree-detail">
+              <article class="explainer-panel" data-explainer-panel="policy-file">
+                <h3>File location</h3>
+                <p>Keeping this in <code>Documentation/</code> makes the rules visible at repository level instead of burying them in one project folder.</p>
+              </article>
+              <article class="explainer-panel" data-explainer-panel="policy-owner">
+                <h3>Owner</h3>
+                <p>A policy without a maintainer drifts fast. Name who updates the standard and when it should be reviewed.</p>
+              </article>
+              <article class="explainer-panel" data-explainer-panel="policy-characters">
+                <h3>Character rules</h3>
+                <p>Simple character rules keep filenames script-friendly and reduce broken paths across systems.</p>
+              </article>
+              <article class="explainer-panel" data-explainer-panel="policy-naming">
+                <h3>Object naming</h3>
+                <p>This is the baseline identity rule. It helps naming stay stable across metadata, files, folders, and repository records.</p>
+              </article>
+              <article class="explainer-panel" data-explainer-panel="policy-workspace">
+                <h3>Workspace policy</h3>
+                <p>Policy should explicitly separate active project space from long-term preservation space so access copies and working files do not overrun the archive.</p>
+              </article>
+              <article class="explainer-panel" data-explainer-panel="policy-preservation">
+                <h3>Preservation master rule</h3>
+                <p>Define how master files are named and retained so they stay distinct from access and print derivatives.</p>
+              </article>
+              <article class="explainer-panel" data-explainer-panel="policy-derivatives">
+                <h3>Derivative rules</h3>
+                <p>Access and print derivatives need their own rules because they often include optimization or repair choices that should be documented separately.</p>
+              </article>
+              <article class="explainer-panel" data-explainer-panel="policy-do-not">
+                <h3>Do not rules</h3>
+                <p>Negative rules are useful because they block risky shortcuts before they become habits.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section data-tab-panel="policy-registry">
+          <div class="doc-layout" data-explainer="policy-registry">
+            <article class="doc-page json-page">
+<pre><code>{
+  "policy": {
+    "<button type="button" class="json-field" data-explainer-target="registry-access">access_level</button>": "",
+    "<button type="button" class="json-field" data-explainer-target="registry-rights">rights</button>": "",
+    "<button type="button" class="json-field" data-explainer-target="registry-license">license</button>": "",
+    "<button type="button" class="json-field" data-explainer-target="registry-attribution">attribution</button>": ""
+  },
+  "publication": {
+    "<button type="button" class="json-field" data-explainer-target="registry-doi-status">doi_status</button>": "none",
+    "<button type="button" class="json-field" data-explainer-target="registry-doi-value">doi_value</button>": null,
+    "<button type="button" class="json-field" data-explainer-target="registry-landing">landing_page</button>": null
+  }
+}</code></pre>
+            </article>
+
+            <div class="tree-detail">
+              <article class="explainer-panel" data-explainer-panel="registry-access">
+                <h3>access_level</h3>
+                <p>Public, internal, restricted, or embargoed access needs to be explicit so technical sharing does not outrun governance.</p>
+              </article>
+              <article class="explainer-panel" data-explainer-panel="registry-rights">
+                <h3>rights</h3>
+                <p>Rights statements document who owns the digital files, which is not always the same as who owns the physical object.</p>
+              </article>
+              <article class="explainer-panel" data-explainer-panel="registry-license">
+                <h3>license</h3>
+                <p>Licenses clarify what reuse is permitted once access is granted.</p>
+              </article>
+              <article class="explainer-panel" data-explainer-panel="registry-attribution">
+                <h3>attribution</h3>
+                <p>This field records how credit should be given when people reuse or cite the asset.</p>
+              </article>
+              <article class="explainer-panel" data-explainer-panel="registry-doi-status">
+                <h3>doi_status</h3>
+                <p>DOI status helps the team track whether publication is planned, reserved, or already released.</p>
+              </article>
+              <article class="explainer-panel" data-explainer-panel="registry-doi-value">
+                <h3>doi_value</h3>
+                <p>Store the actual DOI once assigned so local records and public citation stay connected.</p>
+              </article>
+              <article class="explainer-panel" data-explainer-panel="registry-landing">
+                <h3>landing_page</h3>
+                <p>The landing page is where users should arrive, not a fragile direct file link that may change later.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="card area">
+      <h2>2) Policy questions to resolve before release</h2>
+      <div class="info-grid">
+        <article class="info-card">
+          <h3>Who controls access?</h3>
+          <p>Decide whether the object should be public, internal, embargoed, or restricted before any upload workflow begins.</p>
+        </article>
+        <article class="info-card">
+          <h3>Who owns what?</h3>
+          <p>Separate physical object ownership, digital file copyright, and repository stewardship responsibilities.</p>
+        </article>
+        <article class="info-card">
+          <h3>What reuse is allowed?</h3>
+          <p>Choose the license and attribution expectation that match the intended audience and ethical constraints.</p>
+        </article>
+        <article class="info-card">
+          <h3>When does DOI publication happen?</h3>
+          <p>Define whether DOIs are planned, reserved, or published, and make sure the landing page is ready when status changes.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="card area">
+      <h2>3) Final review checks before release</h2>
+      <div class="reveal-stack">
+        <details class="reveal-card" open>
+          <summary class="reveal-summary">
+            <div>
+              <p class="summary-kicker">Naming and folders</p>
+              <h3>Confirm the files still follow the standard</h3>
+              <p>Release is the wrong moment to discover a repository naming mismatch.</p>
+            </div>
+          </summary>
+          <div class="reveal-body">
+            <ol class="steps">
+              <li>Confirm object filenames and folder names match <code>Documentation/workflow_standards.txt</code>.</li>
+              <li>Confirm preservation packages are in repository preservation storage and not only in project working folders.</li>
+            </ol>
+          </div>
+        </details>
+
+        <details class="reveal-card">
+          <summary class="reveal-summary">
+            <div>
+              <p class="summary-kicker">Rights and access</p>
+              <h3>Make sure the policy values agree with the object record</h3>
+              <p>Rights drift between files and metadata causes confusion later.</p>
+            </div>
+          </summary>
+          <div class="reveal-body">
+            <ol class="steps">
+              <li>Confirm policy values in <code>project_registry.json</code> match object metadata rights and access fields.</li>
+              <li>Confirm license and attribution language match the intended release.</li>
+            </ol>
+          </div>
+        </details>
+
+        <details class="reveal-card">
+          <summary class="reveal-summary">
+            <div>
+              <p class="summary-kicker">Publication</p>
+              <h3>Check DOI and landing page details</h3>
+              <p>Persistent identifiers only help when their local records are current.</p>
+            </div>
+          </summary>
+          <div class="reveal-body">
+            <ol class="steps">
+              <li>Confirm DOI status and publication landing page fields are current before public release.</li>
+              <li>Confirm repository metadata, local metadata, and policy statements are synchronized.</li>
+            </ol>
+          </div>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="./js/loadHeader.js"></script>
+</body>
+</html>

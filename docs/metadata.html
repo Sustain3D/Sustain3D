@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sustain 3D - Metadata</title>
+  <meta name="description" content="Metadata and paradata guidance for 3D repositories." />
+  <link rel="icon" href="./assets/Sustain3d_logoSmall.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="page-metadata">
+  <div id="site-header"></div>
+
+  <main class="wrap">
+    <section class="card start-here">
+      <div class="next">
+        <span class="chip">You are on: Metadata</span>
+        <a class="chip chip-link" href="./storage.html">Next: Storage</a>
+      </div>
+    </section>
+
+    <section class="card flow-banner goal-banner">
+      <h2>Goal</h2>
+      <p>Capture enough descriptive and process context to support interpretation, reuse, and stewardship by maintaining both object-level metadata and project-level registry metadata throughout the workflow.</p>
+    </section>
+
+    <section class="card area">
+      <h2>1) Metadata workflow and handoff</h2>
+      <ul>
+        <li>At setup: create a project record in <code>Metadata/project_registry.json</code> and define <code>workflow_doc</code>, <code>policy_doc</code>, and any shared metadata schema you plan to use.</li>
+        <li>After capture: record object details in a metadata file inside project <code>documentation/</code>, including capture method, device, and units.</li>
+        <li>During processing: update paradata notes with registration, cleanup, decimation, filtering, and export choices as they happen.</li>
+        <li>Before handoff: document linked files, coordinate system, software versions, and validation notes so the package can be reopened later.</li>
+        <li>After handoff: copy raw package, preservation package, and metadata into repository <code>Preservation/&lt;project&gt;/&lt;object&gt;/</code>.</li>
+        <li>During publication: update DOI status/value and policy values in <code>project_registry.json</code>.</li>
+      </ul>
+    </section>
+
+    <section class="card area">
+      <h2>2) Minimum fields plus high-value technical context</h2>
+      <div class="tier">
+        <article class="tier-col">
+          <h3>Core descriptive fields</h3>
+          <ul>
+            <li><code>object_id</code>, <code>title</code>, <code>creator</code>, and <code>physical_object</code></li>
+            <li><code>rights</code>, <code>access_level</code>, and <code>doi</code></li>
+            <li><code>preservation_master</code> and <code>access_files</code></li>
+          </ul>
+        </article>
+        <article class="tier-col">
+          <h3>Often missed but critical</h3>
+          <ul>
+            <li><code>capture_device</code> and scan or photo conditions</li>
+            <li><code>scale_units</code> and <code>coordinate_system</code></li>
+            <li><code>linked_files</code> and expected folder structure</li>
+            <li><code>software_environment</code> and version numbers</li>
+          </ul>
+        </article>
+        <article class="tier-col">
+          <h3>Paradata you should not skip</h3>
+          <ul>
+            <li>Registration or alignment notes</li>
+            <li>Cleanup, smoothing, or decimation choices</li>
+            <li>Export parameters and validation checks</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="card area example-box">
+      <h2>3) Simulated metadata files</h2>
+      <p>These examples mimic the kind of document or control file a small repository can actually maintain. Hover or click highlighted fields to see why they matter.</p>
+
+      <div class="window-shell" data-tabset>
+        <div class="window-bar">
+          <div class="window-tabs">
+            <button type="button" class="window-tab" data-tab-trigger="object-note">Object metadata note</button>
+            <button type="button" class="window-tab" data-tab-trigger="registry-file">Project registry file</button>
+          </div>
+          <strong class="window-title">Interactive metadata preview</strong>
+        </div>
+
+        <section data-tab-panel="object-note">
+          <div class="doc-layout" data-explainer="object-note">
+            <article class="doc-page doc-paper">
+              <div class="doc-heading">
+                <p class="doc-kicker">Object metadata note</p>
+                <h3>CoopersHawk_001</h3>
+                <p>Prepared for repository handoff</p>
+              </div>
+
+              <div class="doc-line">
+                <button type="button" class="doc-field" data-explainer-target="meta-object-id">object_id</button>
+                <span>CoopersHawk_001</span>
+              </div>
+              <div class="doc-line">
+                <button type="button" class="doc-field" data-explainer-target="meta-capture-method">capture_method</button>
+                <span>structured_light</span>
+              </div>
+              <div class="doc-line">
+                <button type="button" class="doc-field" data-explainer-target="meta-capture-device">capture_device</button>
+                <span>Artec Eva, turntable setup</span>
+              </div>
+              <div class="doc-line">
+                <button type="button" class="doc-field" data-explainer-target="meta-coordinate-system">coordinate_system</button>
+                <span>local object coordinates; millimeters</span>
+              </div>
+              <div class="doc-line">
+                <button type="button" class="doc-field" data-explainer-target="meta-linked-files">linked_files</button>
+                <span>OBJ + MTL + TIFF textures stored in geometry/, materials/, textures/</span>
+              </div>
+              <div class="doc-line">
+                <button type="button" class="doc-field" data-explainer-target="meta-software">software_environment</button>
+                <span>Artec Studio 18; Blender 4.2</span>
+              </div>
+              <div class="doc-line">
+                <button type="button" class="doc-field" data-explainer-target="meta-preservation-master">preservation_master</button>
+                <span>CoopersHawk_001_master_v03_pres.obj</span>
+              </div>
+              <div class="doc-line">
+                <button type="button" class="doc-field" data-explainer-target="meta-paradata">paradata</button>
+                <span>Global registration, hole filling on base, light smoothing, no decimation on master</span>
+              </div>
+              <div class="doc-line">
+                <button type="button" class="doc-field" data-explainer-target="meta-validation">validation_note</button>
+                <span>Package reopened in Blender after moving folder; textures resolved correctly</span>
+              </div>
+            </article>
+
+            <div class="tree-detail">
+              <article class="explainer-panel" data-explainer-panel="meta-object-id">
+                <h3>object_id</h3>
+                <p>This is the anchor connecting the object across files, folders, logs, and repository systems. If it drifts, traceability drifts with it.</p>
+              </article>
+              <article class="explainer-panel" data-explainer-panel="meta-capture-method">
+                <h3>capture_method</h3>
+                <p>Photogrammetry, LiDAR, and structured light create different data types, file sizes, and preservation dependencies. The method helps future users interpret the dataset.</p>
+              </article>
+              <article class="explainer-panel" data-explainer-panel="meta-capture-device">
+                <h3>capture_device</h3>
+                <p>Device or scanner details explain precision limits, workflow expectations, and any vendor-specific risks that came with capture.</p>
+              </article>
+              <article class="explainer-panel" data-explainer-panel="meta-coordinate-system">
+                <h3>coordinate_system</h3>
+                <p>Units and coordinate assumptions are essential for scale, alignment, and reuse. Without them, later measurement or assembly work can become unreliable.</p>
+              </article>
+              <article class="explainer-panel" data-explainer-panel="meta-linked-files">
+                <h3>linked_files</h3>
+                <p>3D assets often depend on sidecars such as MTL files and textures. This field documents what belongs together and how the package is expected to be organized.</p>
+              </article>
+              <article class="explainer-panel" data-explainer-panel="meta-software">
+                <h3>software_environment</h3>
+                <p>Version numbers help manage software drift and vendor lock-in. If a file later behaves differently, this field gives people a starting point.</p>
+              </article>
+              <article class="explainer-panel" data-explainer-panel="meta-preservation-master">
+                <h3>preservation_master</h3>
+                <p>Call out the authoritative high-fidelity file set explicitly so it is not confused with lighter access or print derivatives.</p>
+              </article>
+              <article class="explainer-panel" data-explainer-panel="meta-paradata">
+                <h3>paradata</h3>
+                <p>Paradata records interpretation and intervention: registration, smoothing, decimation, filtering, and export choices that shape what the model means.</p>
+              </article>
+              <article class="explainer-panel" data-explainer-panel="meta-validation">
+                <h3>validation_note</h3>
+                <p>A quick note that the package was reopened after transfer makes hidden failures easier to catch before long-term storage.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section data-tab-panel="registry-file">
+          <div class="doc-layout" data-explainer="registry-file">
+            <article class="doc-page json-page">
+<pre><code>{
+  "<button type="button" class="json-field" data-explainer-target="registry-version">registry_version</button>": "1.1",
+  "<button type="button" class="json-field" data-explainer-target="registry-updated">updated</button>": "2026-03-25",
+  "<button type="button" class="json-field" data-explainer-target="registry-projects">projects</button>": [
+    {
+      "<button type="button" class="json-field" data-explainer-target="registry-project-id">project_id</button>": "TREC_CoopersHawk_2026",
+      "title": "Coopers Hawk specimen scan",
+      "owner": "Sustain 3D",
+      "<button type="button" class="json-field" data-explainer-target="registry-workflow">workflow_doc</button>": "Documentation/workflow_standards.txt",
+      "<button type="button" class="json-field" data-explainer-target="registry-schema">metadata_schema</button>": "Metadata/object_profile_v1.txt",
+      "<button type="button" class="json-field" data-explainer-target="registry-policy">policy</button>": {
+        "access_level": "public",
+        "rights": "institution-owned",
+        "license": "CC BY-NC 4.0"
+      },
+      "<button type="button" class="json-field" data-explainer-target="registry-publication">publication</button>": {
+        "doi_status": "published",
+        "doi_value": "10.xxxx/example"
+      }
+    }
+  ]
+}</code></pre>
+            </article>
+
+            <div class="tree-detail">
+              <article class="explainer-panel" data-explainer-panel="registry-version">
+                <h3>registry_version</h3>
+                <p>A schema or profile version helps you change the registry over time without losing track of which structure older records used.</p>
+              </article>
+              <article class="explainer-panel" data-explainer-panel="registry-updated">
+                <h3>updated</h3>
+                <p>This gives you a quick signal that the registry is being maintained and not drifting out of sync with actual preservation activity.</p>
+              </article>
+              <article class="explainer-panel" data-explainer-panel="registry-projects">
+                <h3>projects</h3>
+                <p>The registry works at project level so you can manage many objects while keeping shared ownership, workflow, and publication context together.</p>
+              </article>
+              <article class="explainer-panel" data-explainer-panel="registry-project-id">
+                <h3>project_id</h3>
+                <p>This is the project anchor for workspace folders, preservation packages, and public deposit records.</p>
+              </article>
+              <article class="explainer-panel" data-explainer-panel="registry-workflow">
+                <h3>workflow_doc</h3>
+                <p>Linking the workflow standard makes repository expectations explicit instead of assuming future users know the local process.</p>
+              </article>
+              <article class="explainer-panel" data-explainer-panel="registry-schema">
+                <h3>metadata_schema</h3>
+                <p>This is where you point to a shared schema, profile, or controlled vocabulary so metadata remains consistent across projects.</p>
+              </article>
+              <article class="explainer-panel" data-explainer-panel="registry-policy">
+                <h3>policy</h3>
+                <p>Access, rights, and license statements belong here because reuse is shaped by governance as much as by file quality.</p>
+              </article>
+              <article class="explainer-panel" data-explainer-panel="registry-publication">
+                <h3>publication</h3>
+                <p>Tracking DOI status here helps connect local stewardship work to publication, discovery, and long-term citation.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="card area example-box">
+      <h2>4) Empty templates</h2>
+      <p class="note">Keep these closed until you need to copy them into your own repository.</p>
+
+      <div class="reveal-stack">
+        <details class="reveal-card">
+          <summary class="reveal-summary">
+            <div>
+              <p class="summary-kicker">Project registry template</p>
+              <h3>Shared control file for the whole project</h3>
+              <p>Use this for project identity, workflow references, policy values, and publication status.</p>
+            </div>
+          </summary>
+          <div class="reveal-body">
+            <div class="template-actions">
+              <button type="button" class="btn secondary" data-copy-target="registry-template">Copy registry template</button>
+            </div>
+            <pre class="codeblock" id="registry-template"><code>{
+  "registry_version": "1.1",
+  "updated": "",
+  "projects": [
+    {
+      "project_id": "",
+      "title": "",
+      "owner": "",
+      "date_start": "",
+      "date_end": null,
+      "workflow_doc": "Documentation/workflow_standards.txt",
+      "metadata_schema": "",
+      "policy_doc": "",
+      "policy": {
+        "access_level": "",
+        "rights": "",
+        "license": "",
+        "attribution": ""
+      },
+      "publication": {
+        "doi_status": "none",
+        "doi_value": null,
+        "landing_page": null
+      },
+      "notes": ""
+    }
+  ]
+}
+</code></pre>
+          </div>
+        </details>
+
+        <details class="reveal-card">
+          <summary class="reveal-summary">
+            <div>
+              <p class="summary-kicker">Object metadata template</p>
+              <h3>Field list for one object package</h3>
+              <p>Use this when you need a quick object-level note that still captures technical context.</p>
+            </div>
+          </summary>
+          <div class="reveal-body">
+            <div class="template-actions">
+              <button type="button" class="btn secondary" data-copy-target="object-template">Copy object template</button>
+            </div>
+            <pre class="codeblock" id="object-template"><code>object_id:
+title:
+creator:
+date_created:
+physical_object:
+capture_method:
+capture_device:
+scale_units:
+coordinate_system:
+linked_files:
+software_environment:
+preservation_master:
+access_files:
+rights:
+access_level:
+doi:
+paradata:
+validation_note:
+</code></pre>
+          </div>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="./js/loadHeader.js"></script>
+</body>
+</html>

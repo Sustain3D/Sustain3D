@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sustain 3D - Workflow</title>
+  <meta name="description" content="Step-by-step workflow for small institutions to manage and preserve 3D data." />
+  <link rel="icon" href="./assets/Sustain3d_logoSmall.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="page-workflow">
+  <div id="site-header"></div>
+
+  <main class="wrap">
+    <section class="card start-here">
+      <div class="next">
+        <span class="chip">You are on: Workflow</span>
+        <a class="chip chip-link" href="./repository.html">Next: Repository Setup</a>
+      </div>
+    </section>
+
+    <section class="card flow-banner goal-banner">
+      <h2>Goal</h2>
+      <p>Use this page as full project overview that introduces the PIP phases, provides a project checklist, and shows how working directories hand off finalized files into a dedicated Preservation folder to reduce project-folder bloat.</p>
+    </section>
+
+    <section class="card area">
+      <h2>All PIPs at a glance</h2>
+      <p><strong>PIP</strong> means Preservation Intervention Point: a specific stage where key preservation decisions should be made and documented. Hover a phase for the quick summary, then click it to jump to the full section below.</p>
+
+      <div class="explainer" data-explainer="pip-map">
+        <div class="asset-pack" aria-label="Interactive PIP map">
+          <button type="button" class="asset-piece pip-0" data-explainer-target="map-pip0" data-jump-target="pip-0"><strong>PIP 0</strong><span>Repository setup</span></button>
+          <button type="button" class="asset-piece pip-1" data-explainer-target="map-pip1" data-jump-target="pip-1"><strong>PIP 1</strong><span>After capture</span></button>
+          <button type="button" class="asset-piece pip-2" data-explainer-target="map-pip2" data-jump-target="pip-2"><strong>PIP 2</strong><span>Preservation master</span></button>
+          <button type="button" class="asset-piece pip-3" data-explainer-target="map-pip3" data-jump-target="pip-3"><strong>PIP 3</strong><span>Access and handoff</span></button>
+          <button type="button" class="asset-piece pip-4" data-explainer-target="map-pip4" data-jump-target="pip-4"><strong>PIP 4</strong><span>Storage and maintenance</span></button>
+        </div>
+        <div class="explainer-panels">
+          <article class="explainer-panel" data-explainer-panel="map-pip0">
+            <h3>PIP 0: Build the rules before the files arrive</h3>
+            <p>Set the repository shape, IDs, rights baseline, workflow standards, and metadata expectations before scanning starts.</p>
+            <div class="explainer-meta">
+              <span class="meta-chip">Main folders: Documentation/, Metadata/, Projects/</span>
+            </div>
+          </article>
+          <article class="explainer-panel" data-explainer-panel="map-pip1">
+            <h3>PIP 1: Protect raw capture</h3>
+            <p>Copy source files into managed storage, keep them unchanged, and record capture method, device, settings, and date.</p>
+            <div class="explainer-meta">
+              <span class="meta-chip">Main folder: 01_raw_scans/</span>
+            </div>
+          </article>
+          <article class="explainer-panel" data-explainer-panel="map-pip2">
+            <h3>PIP 2: Create the preservation master</h3>
+            <p>Process the data, retain milestone versions, and document the decisions that produced the authoritative master package.</p>
+            <div class="explainer-meta">
+              <span class="meta-chip">Main folders: 02_processing/, 03_preservation/</span>
+            </div>
+          </article>
+          <article class="explainer-panel" data-explainer-panel="map-pip3">
+            <h3>PIP 3: Make access copies and hand off the package</h3>
+            <p>Create access derivatives, move the raw package and preservation package into repository storage, and keep working folders lean.</p>
+            <div class="explainer-meta">
+              <span class="meta-chip">Main folders: 04_access/, Preservation/</span>
+            </div>
+          </article>
+          <article class="explainer-panel" data-explainer-panel="map-pip4">
+            <h3>PIP 4: Sustain it over time</h3>
+            <p>Apply multi-copy storage, copy validation, policy confirmation, and DOI/publication tracking so the package stays understandable and usable.</p>
+            <div class="explainer-meta">
+              <span class="meta-chip">Main layers: local, offsite, repository, logs</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="card area">
+      <h2>Checklist by phase</h2>
+      <p class="note">Use for mental checking of your own project</p>
+
+      <div class="reveal-stack">
+        <div class="reveal-card">
+          <div>
+            <p class="summary-kicker">Before scanning</p>
+            <h3>Set structure, IDs, and governance</h3>
+            <p>Make the rules visible before the project produces files.</p>
+          </div>
+          <div class="reveal-body">
+            <ul class="task-list">
+              <li><label><input type="checkbox" /> Repository and project folders are created.</label></li>
+              <li><label><input type="checkbox" /> Object ID and naming pattern are assigned.</label></li>
+              <li><label><input type="checkbox" /> Rights and access level are documented.</label></li>
+              <li><label><input type="checkbox" /> FAIR and CARE notes are entered in project records.</label></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="reveal-card">
+          <div>
+            <p class="summary-kicker">After capture</p>
+            <h3>Secure raw data and capture context</h3>
+            <p>Protect the source files before cleanup or export work begins.</p>
+          </div>
+          <div class="reveal-body">
+            <ul class="task-list">
+              <li><label><input type="checkbox" /> Raw files are copied into project storage.</label></li>
+              <li><label><input type="checkbox" /> Capture details and device settings are recorded.</label></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="reveal-card">
+          <div>
+            <p class="summary-kicker">During processing</p>
+            <h3>Retain the story behind the master</h3>
+            <p>Keep milestone exports and write down the decisions that shape the model.</p>
+          </div>
+          <div class="reveal-body">
+            <ul class="task-list">
+              <li><label><input type="checkbox" /> Milestone exports are saved.</label></li>
+              <li><label><input type="checkbox" /> Major processing decisions are written as paradata.</label></li>
+              <li><label><input type="checkbox" /> Preservation master is identified and stored.</label></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="reveal-card">
+          <div>
+            <p class="summary-kicker">After processing and ongoing</p>
+            <h3>Hand off, store, and maintain</h3>
+            <p>Move final packages into preservation storage and keep publication status synchronized.</p>
+          </div>
+          <div class="reveal-body">
+            <ul class="task-list">
+              <li><label><input type="checkbox" /> Access copies are generated in a separate folder.</label></li>
+              <li><label><input type="checkbox" /> Raw package, preservation master, and metadata are copied into the repository Preservation folder.</label></li>
+              <li><label><input type="checkbox" /> Working project folders keep only active processing files.</label></li>
+              <li><label><input type="checkbox" /> DOI status is set to planned, reserved, or published.</label></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card area">
+      <h2>Preservation Intervention Points (PIPs)</h2>
+      <p class="note">Use the dropdowns for more information on each PIP.</p>
+
+      <div class="reveal-stack">
+        <details class="reveal-card pip-0" id="pip-0">
+          <summary class="reveal-summary">
+            <div>
+              <p class="summary-kicker">PIP 0</p>
+              <h3>Repository setup and before scanning</h3>
+              <p>Establish structure, naming, workflow standards, rights, and metadata expectations before capture.</p>
+            </div>
+          </summary>
+          <div class="reveal-body">
+            <div class="pip-detail-grid">
+              <div>
+                <h4>Steps</h4>
+                <ol class="steps">
+                  <li>Create repository and project folder structure.</li>
+                  <li>Assign project ID and naming pattern.</li>
+                  <li>Write or adopt <code>Documentation/workflow_standards.txt</code> and apply it.</li>
+                  <li>Set rights and access level baseline.</li>
+                  <li>Define required metadata and registry fields.</li>
+                </ol>
+                <div class="outcome"><strong>After this PIP you will have:</strong> a ready repository, a project ID, and clear governance before scan day.</div>
+              </div>
+              <div class="pip-folder-pane">
+                <div>
+                  <h4>Folder focus for this stage</h4>
+                  <pre class="codeblock"><code>Documentation/
+Metadata/
+Projects/[Project_ID]/
+</code></pre>
+                </div>
+                <div class="info-grid">
+                  <div class="info-card"><h3>Main setup work</h3><p>Create folders, name the project, write workflow standards, and start the project registry.</p></div>
+                  <div class="info-card"><h3>What to record</h3><p>Rights baseline, access expectations, required metadata fields, and naming rules.</p></div>
+                </div>
+              </div>
+            </div>
+            <div class="tier pip-tier">
+              <div class="tier-col"><h4>Good</h4><ul><li>Folders and IDs exist.</li><li>Basic rights note exists.</li></ul></div>
+              <div class="tier-col"><h4>Better</h4><ul><li>Workflow standard file is documented.</li><li>Project registry record is created.</li></ul></div>
+              <div class="tier-col"><h4>Best</h4><ul><li>Naming/version rules are enforced consistently.</li><li>DOI plan is defined early.</li></ul></div>
+            </div>
+          </div>
+        </details>
+
+        <details class="reveal-card pip-1" id="pip-1">
+          <summary class="reveal-summary">
+            <div>
+              <p class="summary-kicker">PIP 1</p>
+              <h3>After capture</h3>
+              <p>Secure raw capture data immediately and preserve enough context to trust it later.</p>
+            </div>
+          </summary>
+          <div class="reveal-body">
+            <div class="pip-detail-grid">
+              <div>
+                <h4>Steps</h4>
+                <ol class="steps">
+                  <li>Copy raw captures into <code>01_raw_scans/</code>.</li>
+                  <li>Record device, settings, operator, and date.</li>
+                  <li>Keep source data unchanged and track file location in documentation.</li>
+                </ol>
+                <div class="callout">This is the stage where capture method and device history matter most. If you miss them here, they are hard to reconstruct later.</div>
+                <div class="outcome"><strong>After this PIP you will have:</strong> preserved raw data with enough context to trust and reuse it.</div>
+              </div>
+              <div class="pip-folder-pane">
+                <div>
+                  <h4>Folder focus for this stage</h4>
+                  <pre class="codeblock"><code>Projects/[Project_ID]/[Object_ID]/
+  01_raw_scans/
+  documentation/
+</code></pre>
+                </div>
+                <div class="info-grid">
+                  <div class="info-card"><h3>Main setup work</h3><p>Copy raw capture data into managed storage and keep the source files unchanged.</p></div>
+                  <div class="info-card"><h3>What to record</h3><p>Capture device, settings, operator, date, and any deviations from the planned workflow.</p></div>
+                </div>
+              </div>
+            </div>
+            <div class="tier pip-tier">
+              <div class="tier-col"><h4>Good</h4><ul><li>Raw files copied the same day.</li><li>Short capture note written.</li></ul></div>
+              <div class="tier-col"><h4>Better</h4><ul><li>Capture context is complete.</li><li>Raw folder follows naming standard.</li></ul></div>
+              <div class="tier-col"><h4>Best</h4><ul><li>Second person confirms completeness.</li><li>Capture protocol deviations are logged.</li></ul></div>
+            </div>
+          </div>
+        </details>
+
+        <details class="reveal-card pip-2" id="pip-2">
+          <summary class="reveal-summary">
+            <div>
+              <p class="summary-kicker">PIP 2</p>
+              <h3>Processing and preservation master</h3>
+              <p>Create the authoritative master and document the decisions that shaped it.</p>
+            </div>
+          </summary>
+          <div class="reveal-body">
+            <div class="pip-detail-grid">
+              <div>
+                <h4>Steps</h4>
+                <ol class="steps">
+                  <li>Process scans in <code>02_processing/</code> and save major milestones.</li>
+                  <li>Export high-fidelity preservation master files in <code>03_preservation/</code>.</li>
+                  <li>Write object metadata and paradata notes for key decisions.</li>
+                </ol>
+                <div class="callout">This is where provenance and paradata become essential. If a model is filtered, smoothed, or decimated, record it here.</div>
+                <div class="outcome"><strong>After this PIP you will have:</strong> a traceable preservation master that can be interpreted later.</div>
+              </div>
+              <div class="pip-folder-pane">
+                <div>
+                  <h4>Folder focus for this stage</h4>
+                  <pre class="codeblock"><code>Projects/[Project_ID]/[Object_ID]/
+  02_processing/
+  03_preservation/
+  documentation/
+</code></pre>
+                </div>
+                <div class="info-grid">
+                  <div class="info-card"><h3>Main setup work</h3><p>Process the model, save milestone versions, and export the high-fidelity preservation master.</p></div>
+                  <div class="info-card"><h3>What to record</h3><p>Registration, cleanup, smoothing, decimation, export settings, and software/version information.</p></div>
+                </div>
+              </div>
+            </div>
+            <div class="tier pip-tier">
+              <div class="tier-col"><h4>Good</h4><ul><li>Final master export is saved.</li><li>Basic processing notes exist.</li></ul></div>
+              <div class="tier-col"><h4>Better</h4><ul><li>Milestone versions are retained.</li><li>Paradata includes key parameter choices.</li></ul></div>
+              <div class="tier-col"><h4>Best</h4><ul><li>Full provenance trail is captured.</li><li>Master quality check is documented.</li></ul></div>
+            </div>
+          </div>
+        </details>
+
+        <details class="reveal-card pip-3" id="pip-3">
+          <summary class="reveal-summary">
+            <div>
+              <p class="summary-kicker">PIP 3</p>
+              <h3>Access derivatives and preservation handoff</h3>
+              <p>Produce delivery copies and move final packages into repository preservation storage.</p>
+            </div>
+          </summary>
+          <div class="reveal-body">
+            <div class="pip-detail-grid">
+              <div>
+                <h4>Steps</h4>
+                <ol class="steps">
+                  <li>Create access derivatives in <code>04_access/</code> for web, teaching, or outreach.</li>
+                  <li>Copy raw package, preservation package, and metadata file into <code>Preservation/&lt;project&gt;/&lt;object&gt;/</code>.</li>
+                  <li>Keep only active working files in project processing folders.</li>
+                </ol>
+                <div class="callout">Before you consider the handoff complete, reopen the package after transfer so broken paths or missing sidecars are caught early.</div>
+                <div class="outcome"><strong>After this PIP you will have:</strong> usable public-facing outputs plus a clean preservation copy separated from active project folders.</div>
+              </div>
+              <div class="pip-folder-pane">
+                <div>
+                  <h4>Folder focus for this stage</h4>
+                  <pre class="codeblock"><code>Projects/[Project_ID]/[Object_ID]/
+  04_access/
+
+Preservation/[Project_ID]/[Object_ID]/
+</code></pre>
+                </div>
+                <div class="info-grid">
+                  <div class="info-card"><h3>Main setup work</h3><p>Create access derivatives and copy the raw package, preservation package, and metadata into the repository.</p></div>
+                  <div class="info-card"><h3>What to record</h3><p>Which derivative came from which master, and whether the packaged files reopen correctly after transfer.</p></div>
+                </div>
+              </div>
+            </div>
+            <div class="tier pip-tier">
+              <div class="tier-col"><h4>Good</h4><ul><li>At least one access copy exists.</li><li>It is separated from the master.</li></ul></div>
+              <div class="tier-col"><h4>Better</h4><ul><li>Preservation folder handoff is complete.</li><li>Metadata links each derivative.</li></ul></div>
+              <div class="tier-col"><h4>Best</h4><ul><li>Access performance is tested.</li><li>Working directories are kept lean after handoff.</li></ul></div>
+            </div>
+          </div>
+        </details>
+
+        <details class="reveal-card pip-4" id="pip-4">
+          <summary class="reveal-summary">
+            <div>
+              <p class="summary-kicker">PIP 4</p>
+              <h3>Storage, policy checks, and maintenance</h3>
+              <p>Place preservation packages in reliable storage tiers, validate governance, and maintain publication records.</p>
+            </div>
+          </summary>
+          <div class="reveal-body">
+            <div class="pip-detail-grid">
+              <div>
+                <h4>Steps</h4>
+                <ol class="steps">
+                  <li>Apply the three-copy model to the repository Preservation folder package.</li>
+                  <li>Update project registry metadata with policy and publication status.</li>
+                  <li>Set DOI status and confirm access/policy language before release.</li>
+                </ol>
+                <div class="callout">This is the maintenance stage: copies, policy confirmation, DOI tracking, and link checking all need recurring attention.</div>
+                <div class="outcome"><strong>After this PIP you will have:</strong> distributed storage for preservation masters and a clear DOI publication path.</div>
+              </div>
+              <div class="pip-folder-pane">
+                <div>
+                  <h4>Folder focus for this stage</h4>
+                  <pre class="codeblock"><code>Preservation/[Project_ID]/[Object_ID]/
+Preservation_Logs/
+Metadata/project_registry.json
+</code></pre>
+                </div>
+                <div class="info-grid">
+                  <div class="info-card"><h3>Main setup work</h3><p>Distribute copies, confirm policy values, and keep DOI/publication records synchronized.</p></div>
+                  <div class="info-card"><h3>What to record</h3><p>Storage locations, validation checks, DOI status, landing page links, and maintenance actions.</p></div>
+                </div>
+              </div>
+            </div>
+            <div class="tier pip-tier">
+              <div class="tier-col"><h4>Good</h4><ul><li>Master has working and backup copies.</li><li>DOI planning status is tracked.</li></ul></div>
+              <div class="tier-col"><h4>Better</h4><ul><li>Master has offsite copy.</li><li>DOI is reserved before publication.</li></ul></div>
+              <div class="tier-col"><h4>Best</h4><ul><li>Storage and DOI records stay current.</li><li>Access links and metadata stay synchronized.</li></ul></div>
+            </div>
+          </div>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="./js/loadHeader.js"></script>
+</body>
+</html>

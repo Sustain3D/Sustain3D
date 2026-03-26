@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sustain 3D - Repository Setup</title>
+  <meta name="description" content="How to set up a small 3D repository and manage files over time." />
+  <link rel="icon" href="./assets/Sustain3d_logoSmall.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="page-repo">
+  <div id="site-header"></div>
+
+  <main class="wrap">
+    <section class="card start-here">
+      <div class="next">
+        <span class="chip">You are on: Repository Setup</span>
+        <a class="chip chip-link" href="./files.html">Next: Files</a>
+      </div>
+    </section>
+
+    <section class="card flow-banner goal-banner">
+      <h2>Goal</h2>
+      <p>Create a stable structure that separates repository-wide program management from project-by-project working folders, while keeping naming, documentation, and long-term stewardship consistent.</p>
+    </section>
+
+    <section class="card area">
+      <h2>Repository level vs project level</h2>
+      <p><strong>Repository-level structure</strong> stores shared program components such as metadata standards, governance files, preservation logs, and long-term object packages across many projects. <strong>Project-level structure</strong> stores one active production workspace from raw capture through access outputs. Together they keep institution-wide continuity while preserving clear project context.</p>
+      <div class="callout">
+        Project folders are not the repository. Projects stay active and messy; Preservation stays stable and authoritative.
+      </div>
+    </section>
+
+    <section class="card area example-box">
+      <h2>1) Explore the repository root</h2>
+      <p>Hover or click folders to see what each part does in a sustainable 3D repository.</p>
+
+      <div class="window-shell" data-explainer="repository-root">
+        <div class="window-bar">
+          <div class="window-dots"><span></span><span></span><span></span></div>
+          <strong class="window-title">3D_Repository</strong>
+        </div>
+
+        <div class="file-explorer-body">
+          <div class="file-tree">
+            <button type="button" class="tree-node" data-explainer-target="repo-documentation"><span class="node-kind">DIR</span>Documentation/</button>
+            <button type="button" class="tree-node" data-explainer-target="repo-metadata"><span class="node-kind">DIR</span>Metadata/</button>
+            <button type="button" class="tree-node" data-explainer-target="repo-objects"><span class="node-kind">DIR</span>Objects/</button>
+            <div class="tree-group">
+              <button type="button" class="tree-node" data-explainer-target="repo-preservation"><span class="node-kind">DIR</span>Preservation/</button>
+              <div class="tree-group">
+                <div class="tree-static"><span class="node-kind">DIR</span>[Project_ID]/</div>
+                <div class="tree-group">
+                  <div class="tree-static"><span class="node-kind">DIR</span>[Object_ID]/</div>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="tree-node" data-explainer-target="repo-logs"><span class="node-kind">DIR</span>Preservation_Logs/</button>
+            <div class="tree-group">
+              <button type="button" class="tree-node" data-explainer-target="repo-projects"><span class="node-kind">DIR</span>Projects/</button>
+              <div class="tree-group">
+                <div class="tree-static"><span class="node-kind">DIR</span>[Project_ID]/</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tree-detail">
+            <article class="explainer-panel" data-explainer-panel="repo-documentation">
+              <h3>Documentation/</h3>
+              <p>Keep repository-wide standards here: workflow rules, naming guidance, policy notes, and local documentation that should stay stable across projects.</p>
+              <div class="explainer-meta">
+                <span class="meta-chip">Example file: workflow_standards.txt</span>
+                <span class="meta-chip">Supports consistency across teams</span>
+              </div>
+            </article>
+            <article class="explainer-panel" data-explainer-panel="repo-metadata">
+              <h3>Metadata/</h3>
+              <p>This is the central control layer for shared registries, schemas, and project tracking files. It helps prevent metadata from being stranded inside one project folder.</p>
+              <div class="explainer-meta">
+                <span class="meta-chip">Example file: project_registry.json</span>
+                <span class="meta-chip">Can also point to shared vocabularies</span>
+              </div>
+            </article>
+            <article class="explainer-panel" data-explainer-panel="repo-objects">
+              <h3>Objects/</h3>
+              <p>Use this area for durable object identities and optional long-term groupings. It helps separate intellectual identity from short-lived project activity.</p>
+              <div class="explainer-meta">
+                <span class="meta-chip">Best for object collections that outlive one project</span>
+              </div>
+            </article>
+            <article class="explainer-panel" data-explainer-panel="repo-preservation">
+              <h3>Preservation/</h3>
+              <p>This is the long-term retention space. Store raw packages, preservation masters, and the metadata/paradata needed to interpret them later.</p>
+              <div class="explainer-meta">
+                <span class="meta-chip">Authoritative package</span>
+                <span class="meta-chip">Keep linked files together</span>
+              </div>
+            </article>
+            <article class="explainer-panel" data-explainer-panel="repo-logs">
+              <h3>Preservation_Logs/</h3>
+              <p>Track migrations, preservation actions, and major interventions over time. This folder makes stewardship visible instead of leaving it as informal memory.</p>
+              <div class="explainer-meta">
+                <span class="meta-chip">Example files: migration_records.txt</span>
+              </div>
+            </article>
+            <article class="explainer-panel" data-explainer-panel="repo-projects">
+              <h3>Projects/</h3>
+              <p>Projects are active workspaces. They can include raw capture, in-progress processing, access copies, and notes while work is still underway.</p>
+              <div class="explainer-meta">
+                <span class="meta-chip">Working space, not final preservation space</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <details class="reveal-card compact-reveal">
+        <summary class="reveal-summary">
+          <div>
+            <h3>View Complete File Structure</h3>
+          </div>
+        </summary>
+        <div class="reveal-body">
+          <pre class="codeblock"><code>3D_Repository/
+  Documentation/
+    workflow_standards.txt
+
+  Metadata/
+    project_registry.json
+
+  Objects/
+
+  Preservation/
+    [Project_ID]/
+      [Object_ID]/
+        [Object_ID]__v##_raw/
+        [Object_ID]_v##_pres/
+        [Object_ID]_Metadata.txt
+
+  Preservation_Logs/
+    migration_records.txt
+
+  Projects/
+    [Project_ID]/
+      [Object_ID]/
+        01_raw_scans/
+        02_processing/
+        03_preservation/
+        04_access/
+        documentation/
+</code></pre>
+        </div>
+      </details>
+    </section>
+
+    <section class="card area example-box">
+      <h2>2) Explore the project workspace</h2>
+      <p>This is the part that stays active during scanning and processing. Once the model is completed, only the preservation package moves into <code>Preservation/</code>.</p>
+
+      <div class="window-shell" data-explainer="workspace-tree">
+        <div class="window-bar">
+          <div class="window-dots"><span></span><span></span><span></span></div>
+          <strong class="window-title">Projects/[Project_ID]/[Object_ID]</strong>
+        </div>
+
+        <div class="file-explorer-body">
+          <div class="file-tree">
+            <button type="button" class="tree-node" data-explainer-target="workspace-raw"><span class="node-kind">DIR</span>01_raw_scans/</button>
+            <button type="button" class="tree-node" data-explainer-target="workspace-processing"><span class="node-kind">DIR</span>02_processing/</button>
+            <button type="button" class="tree-node" data-explainer-target="workspace-preservation"><span class="node-kind">DIR</span>03_preservation/</button>
+            <button type="button" class="tree-node" data-explainer-target="workspace-access"><span class="node-kind">DIR</span>04_access/</button>
+            <button type="button" class="tree-node" data-explainer-target="workspace-docs"><span class="node-kind">DIR</span>documentation/</button>
+          </div>
+
+          <div class="tree-detail">
+            <article class="explainer-panel" data-explainer-panel="workspace-raw">
+              <h3>01_raw_scans/</h3>
+              <p>Store untouched source files here, such as camera images, E57 point clouds, or scanner exports. Raw data should remain identifiable and unchanged.</p>
+            </article>
+            <article class="explainer-panel" data-explainer-panel="workspace-processing">
+              <h3>02_processing/</h3>
+              <p>Use this folder for alignment, cleanup, intermediate saves, and milestone outputs. This is where version growth usually happens.</p>
+            </article>
+            <article class="explainer-panel" data-explainer-panel="workspace-preservation">
+              <h3>03_preservation/</h3>
+              <p>Place finalized high-fidelity exports here before handoff. These files should be the preservation-ready package, not the whole working mess.</p>
+            </article>
+            <article class="explainer-panel" data-explainer-panel="workspace-access">
+              <h3>04_access/</h3>
+              <p>Optimized derivatives for the web, teaching, or outreach belong here. Keeping them separate prevents access copies from being mistaken for masters.</p>
+            </article>
+            <article class="explainer-panel" data-explainer-panel="workspace-docs">
+              <h3>documentation/</h3>
+              <p>Keep object metadata, paradata, software/version notes, and validation notes here while work is active so they can move with the preservation package later.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <div class="handoff-strip">
+        <div class="handoff-card">
+          <strong>Once the model is completed, move these from the workspace</strong>
+          <div class="handoff-items">
+            <span class="code-chip"><code>01_raw_scans/</code></span>
+            <span class="code-chip"><code>03_preservation/</code></span>
+            <span class="code-chip"><code>documentation/</code></span>
+          </div>
+        </div>
+        <div class="handoff-arrow">Move into final package</div>
+        <div class="handoff-card">
+          <strong>Into repository</strong>
+          <p><code>Preservation/[Project_ID]/[Object_ID]/</code></p>
+        </div>
+      </div>
+
+      <details class="reveal-card compact-reveal">
+        <summary class="reveal-summary">
+          <div>
+            <h3>View full preservation file structure</h3>
+          </div>
+        </summary>
+        <div class="reveal-body">
+          <pre class="codeblock"><code>Preservation/
+  [Project_ID]/
+    [Object_ID]/
+      [Object_ID]__v##_raw/
+      [Object_ID]_v##_pres/
+      [Object_ID]_Metadata.txt
+</code></pre>
+        </div>
+      </details>
+    </section>
+
+    <section class="card area">
+      <h2>3) Rules</h2>
+      <ul>
+        <li>Every object keeps one stable object ID across raw, processing, preservation, and access files.</li>
+        <li>Projects are working space; Preservation is long-term retention space.</li>
+        <li>Raw package, preservation package, metadata, and paradata should move together at handoff.</li>
+        <li>Preservation logs should record migrations and major interventions over time.</li>
+        <li>Project registry and workflow standards are maintained at repository level for consistency.</li>
+        <li>Validate linked files after packaging so moved folders still open correctly in a second environment.</li>
+      </ul>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="./js/loadHeader.js"></script>
+</body>
+</html>

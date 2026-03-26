@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sustain 3D - Files</title>
+  <meta name="description" content="File management practices for sustainable 3D repositories." />
+  <link rel="icon" href="./assets/Sustain3d_logoSmall.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="page-files">
+  <div id="site-header"></div>
+
+  <main class="wrap">
+    <section class="card start-here">
+      <div class="next">
+        <span class="chip">You are on: Files</span>
+        <a class="chip chip-link" href="./metadata.html">Next: Metadata</a>
+      </div>
+    </section>
+
+    <section class="card flow-banner goal-banner">
+      <h2>Goal</h2>
+      <p>Set durable naming, structure, and file-format rules so preservation masters, access copies, and print derivatives stay understandable, reusable, and sustainable over time.</p>
+    </section>
+
+    <section class="card area">
+      <h2>1) How this page is organized</h2>
+      <p>Hover a card for a quick scan, then click it to jump straight to that part of the page.</p>
+      <div class="section-jump-grid">
+        <a class="section-jump" href="#naming"><strong>2) Naming conventions</strong><span>Build stable names and understand how related files travel together.</span></a>
+        <a class="section-jump" href="#file-types"><strong>3) File-type qualities</strong><span>Look for openness, transparency, and interoperability.</span></a>
+        <a class="section-jump" href="#formats"><strong>4) Common 3D formats</strong><span>Compare mesh, point-cloud, and print formats by role.</span></a>
+        <a class="section-jump" href="#roles"><strong>5) File roles</strong><span>Separate preservation masters, access files, and print derivatives.</span></a>
+        <a class="section-jump" href="#unknown-names"><strong>6) Unknown names</strong><span>Use placeholders you can defend instead of inventing certainty.</span></a>
+        <a class="section-jump" href="#project-vs-object"><strong>7) Structure and parts</strong><span>Choose project or object organization and keep complex assemblies legible.</span></a>
+        <a class="section-jump" href="#rules"><strong>8) Clean rules summary</strong><span>Use the short version when you need the page boiled down.</span></a>
+      </div>
+    </section>
+
+    <section class="card area">
+      <h2 id="naming">2) Naming conventions and file relationships</h2>
+      <p>Use stable, descriptive names that include object identity, part identity (if needed), date, version, and file role. Hover or click each segment to see what it contributes.</p>
+
+      <div class="explainer" data-explainer="filename-pattern">
+        <div class="explainer-pattern" aria-label="Interactive file naming pattern">
+          <button type="button" class="explainer-token" data-explainer-target="object-id">[ObjectID]</button>
+          <span class="explainer-sep">_</span>
+          <button type="button" class="explainer-token" data-explainer-target="part-or-view">[PartOrView]</button>
+          <span class="explainer-sep">_</span>
+          <button type="button" class="explainer-token" data-explainer-target="date-stamp">[YYYYMMDD]</button>
+          <span class="explainer-sep">_</span>
+          <button type="button" class="explainer-token" data-explainer-target="version-token">v[##]</button>
+          <span class="explainer-sep">_</span>
+          <button type="button" class="explainer-token" data-explainer-target="stage-token">[stage]</button>
+          <span class="explainer-sep">.</span>
+          <button type="button" class="explainer-token" data-explainer-target="extension-token">[ext]</button>
+        </div>
+
+        <div class="explainer-panels">
+          <article class="explainer-panel" data-explainer-panel="object-id">
+            <h3>ObjectID</h3>
+            <p>The stable identifier that follows the object through raw capture, processing, preservation, and access.</p>
+            <div class="explainer-meta">
+              <span class="meta-chip">Example: CoopersHawk_001</span>
+              <span class="meta-chip">Do not change between folders</span>
+            </div>
+          </article>
+          <article class="explainer-panel" data-explainer-panel="part-or-view">
+            <h3>PartOrView</h3>
+            <p>Use this slot for a part code, assembly name, or capture/view description so users know what this file actually represents.</p>
+            <div class="explainer-meta">
+              <span class="meta-chip">Examples: P01_Wing, master_assembly, underside</span>
+            </div>
+          </article>
+          <article class="explainer-panel" data-explainer-panel="date-stamp">
+            <h3>YYYYMMDD</h3>
+            <p>A machine-sortable date shows when the file version was created and helps distinguish milestones without relying on memory.</p>
+            <div class="explainer-meta">
+              <span class="meta-chip">Example: 20260224</span>
+            </div>
+          </article>
+          <article class="explainer-panel" data-explainer-panel="version-token">
+            <h3>v[##]</h3>
+            <p>The version number marks a discrete saved state. Keep the numbering simple and sequential so later files sort in order.</p>
+            <div class="explainer-meta">
+              <span class="meta-chip">Examples: v01, v02, v03</span>
+            </div>
+          </article>
+          <article class="explainer-panel" data-explainer-panel="stage-token">
+            <h3>stage</h3>
+            <p>This tells people the file role at a glance: raw capture, preservation master, access copy, print derivative, or another local stage you document.</p>
+            <div class="explainer-meta">
+              <span class="meta-chip">Examples: raw, pres, access, print</span>
+            </div>
+          </article>
+          <article class="explainer-panel" data-explainer-panel="extension-token">
+            <h3>ext</h3>
+            <p>The extension names the actual format and signals likely dependencies. It matters because one stage can exist in multiple formats with different preservation value.</p>
+            <div class="explainer-meta">
+              <span class="meta-chip">Examples: obj, glb, e57, tif</span>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <pre class="codeblock"><code>CoopersHawk_001_wing_exterior_20260220_v01_raw.tif
+CoopersHawk_001_master_assembly_20260224_v03_pres.obj
+CoopersHawk_001_web_20260224_v01_access.glb
+</code></pre>
+      <p class="note">Keep names machine-sortable and avoid spaces or punctuation that can break scripts.</p>
+
+      <div class="callout">
+        Linked 3D packages should use relative paths whenever possible. If you move the folder, textures, materials, and scene references should still resolve without pointing back to one specific computer.
+      </div>
+
+      <h3>A 3D asset is a package, not a single file</h3>
+      <p class="note">Open the example, then hover or click each file to see how the package works as one connected unit.</p>
+
+      <details class="reveal-card compact-reveal">
+        <summary class="reveal-summary">
+          <div>
+            <p class="summary-kicker">Example</p>
+            <h3>View Example File Relationship</h3>
+            <p>Trace how geometry, materials, textures, scene notes, metadata, and paradata stay connected.</p>
+          </div>
+        </summary>
+        <div class="reveal-body">
+      <p>The thesis treats 3D data as a compound object. Below are the pieces that may need to travel together:</p>
+
+      <div class="explainer asset-explainer" data-explainer="asset-package">
+        <div class="asset-pack" aria-label="Interactive 3D asset package">
+          <button type="button" class="asset-piece" data-explainer-target="asset-geometry"><strong>.OBJ</strong><span>Geometry mesh</span></button>
+          <button type="button" class="asset-piece" data-explainer-target="asset-textures"><strong>.tiif</strong><span>Texture image</span></button>
+          <button type="button" class="asset-piece" data-explainer-target="asset-materials"><strong>.mtl</strong><span>Material links</span></button>
+          <button type="button" class="asset-piece" data-explainer-target="asset-scene"><strong>.json</strong><span>Scene or assembly data</span></button>
+          <button type="button" class="asset-piece" data-explainer-target="asset-metadata"><strong>Metadata.txt</strong><span>Object metadata</span></button>
+          <button type="button" class="asset-piece" data-explainer-target="asset-paradata"><strong>paradata.txt</strong><span>Process notes</span></button>
+        </div>
+
+        <div class="explainer-panels">
+          <article class="explainer-panel" data-explainer-panel="asset-geometry">
+            <h3>Geometry mesh</h3>
+            <p><strong>CoopersHawk_001_master_assembly_v03.obj</strong> holds the specimen's form. It is the core file, but it still depends on the rest of the package to represent the model completely.</p>
+          </article>
+          <article class="explainer-panel" data-explainer-panel="asset-textures">
+            <h3>Texture image</h3>
+            <p><strong>CoopersHawk_001_feather_diffuse.tif</strong> carries color and surface detail. If it gets separated from the mesh and material file, the model may open with the right shape but the wrong appearance.</p>
+          </article>
+          <article class="explainer-panel" data-explainer-panel="asset-materials">
+            <h3>Material links</h3>
+            <p><strong>CoopersHawk_001_master_assembly_v03.mtl</strong> tells software which textures belong on which surfaces and how the geometry should be rendered.</p>
+          </article>
+          <article class="explainer-panel" data-explainer-panel="asset-scene">
+            <h3>Scene or assembly data</h3>
+            <p><strong>assembly_relationships.json</strong> records relationships that do not fit neatly inside the mesh itself, such as transforms, part arrangement, or other structural context needed for reuse.</p>
+          </article>
+          <article class="explainer-panel" data-explainer-panel="asset-metadata">
+            <h3>Object metadata</h3>
+            <p><strong>CoopersHawk_001_Metadata.txt</strong> identifies the object, describes capture context, and documents which files belong together in the package.</p>
+          </article>
+          <article class="explainer-panel" data-explainer-panel="asset-paradata">
+            <h3>Process notes</h3>
+            <p><strong>CoopersHawk_001_paradata.txt</strong> explains the human decisions behind the model, such as filtering, registration, smoothing, decimation, and export choices.</p>
+          </article>
+        </div>
+      </div>
+
+      <pre class="codeblock"><code>CoopersHawk_001_preservation_package/
+  geometry/CoopersHawk_001_master_assembly_v03.obj
+  materials/CoopersHawk_001_master_assembly_v03.mtl
+  textures/CoopersHawk_001_feather_diffuse.tif
+  metadata/object_metadata.txt
+  metadata/paradata.txt
+  assembly/assembly_relationships.json
+</code></pre>
+
+      <ul>
+        <li>Keep linked sidecars together as one identifiable package.</li>
+        <li>Record expected directory structure and dependencies in metadata.</li>
+        <li>Reopen the package in a second tool after moving it to confirm links still resolve.</li>
+      </ul>
+        </div>
+      </details>
+    </section>
+
+    <section class="card area">
+      <h2 id="file-types">3) Characteristics of sustainable 3D file types</h2>
+      <p>
+        Long-term preservation depends on format qualities, not short-term popularity. Guidance from organizations such as the
+        <a href="https://www.loc.gov/preservation/digital/formats/sustain/sustain.shtml" target="_blank" rel="noreferrer">Library of Congress</a>
+        and
+        <a href="https://library.duke.edu/using/policies/recommended-file-formats-digital-preservation" target="_blank" rel="noreferrer">Duke Libraries</a>
+        prioritizes formats that remain readable across tools and over time.
+      </p>
+      <ul>
+        <li><strong>Open and documented:</strong> technical specifications are publicly available.</li>
+        <li><strong>Transparent:</strong> structure and content can be inspected without one vendor's software.</li>
+        <li><strong>Widely supported:</strong> multiple independent tools can open and convert the format.</li>
+        <li><strong>Interoperable:</strong> data can move between tools with limited loss or lock-in.</li>
+        <li><strong>Low dependency:</strong> long-term access does not require fragile hardware or discontinued platforms.</li>
+        <li><strong>Migration-friendly:</strong> geometry, texture, units, and context can be moved without major data loss.</li>
+      </ul>
+      <div class="callout">
+        If a workflow depends on one vendor tool or one software version, record that dependency explicitly. Long-term risk often comes from pipelines and plugins, not just the file extension.
+      </div>
+    </section>
+
+    <section class="card area">
+      <h2 id="formats">4) Common 3D file formats and where they fit</h2>
+      <p>No single format covers every need. Use different formats for mesh fidelity, point-cloud preservation, access delivery, and print production.</p>
+      <div class="reveal-stack">
+        <details class="reveal-card" open>
+          <summary class="reveal-summary">
+            <div>
+              <p class="summary-kicker">Mesh formats</p>
+              <h3>OBJ, PLY, USD, and glTF/GLB</h3>
+              <p>Open this when you need surface mesh tradeoffs for preservation and access.</p>
+            </div>
+          </summary>
+          <div class="reveal-body">
+            <div class="format-table-wrap">
+              <table class="format-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Format</th>
+                    <th scope="col">Preservation pros</th>
+                    <th scope="col">Preservation cons</th>
+                    <th scope="col">Web/access pros</th>
+                    <th scope="col">Web/access cons</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">OBJ (+MTL)</th>
+                    <td>Open, documented, and broadly readable.</td>
+                    <td>Materials/textures are sidecars and can be separated.</td>
+                    <td>Easy to convert to GLB for viewers.</td>
+                    <td>Not efficient to deliver directly in-browser.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">PLY</th>
+                    <td>Good geometry plus per-vertex color/attributes.</td>
+                    <td>Limited material/scene semantics across tools.</td>
+                    <td>Useful for research viewers after conversion.</td>
+                    <td>Not a common direct web runtime format.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">USD</th>
+                    <td>Strong scene structure, composition, and variant support.</td>
+                    <td>More complex pipeline and governance requirements.</td>
+                    <td>Works well in advanced 3D ecosystems.</td>
+                    <td>Inconsistent browser-native support compared to GLB.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">glTF/GLB</th>
+                    <td>Single-file GLB can simplify packaging for derivatives.</td>
+                    <td>Typically optimized/compressed for delivery rather than full-fidelity masters.</td>
+                    <td>Fast, lightweight, and widely supported in web viewers.</td>
+                    <td>May drop high-detail data needed for long-term authority.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </details>
+
+        <details class="reveal-card">
+          <summary class="reveal-summary">
+            <div>
+              <p class="summary-kicker">Point cloud formats</p>
+              <h3>E57, XYZ, and LAS/LAZ</h3>
+              <p>Open this when you need scan-source formats rather than surface-mesh delivery formats.</p>
+            </div>
+          </summary>
+          <div class="reveal-body">
+            <div class="format-table-wrap">
+              <table class="format-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Format</th>
+                    <th scope="col">Preservation pros</th>
+                    <th scope="col">Preservation cons</th>
+                    <th scope="col">Web/access pros</th>
+                    <th scope="col">Web/access cons</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">E57</th>
+                    <td>Open and suited for LiDAR/scan retention with scan metadata.</td>
+                    <td>Harder for non-specialist teams to inspect manually.</td>
+                    <td>Reliable source for creating web-ready derivatives.</td>
+                    <td>Rarely served directly in browser viewers.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">XYZ</th>
+                    <td>Simple, transparent coordinate export.</td>
+                    <td>Minimal metadata/context unless documented separately.</td>
+                    <td>Easy import path to processing tools.</td>
+                    <td>Large plain-text files are heavy for web delivery.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">LAS/LAZ</th>
+                    <td>Standardized point-cloud schema with optional compression (LAZ).</td>
+                    <td>Field consistency can vary by producer workflow.</td>
+                    <td>Common input for tiled/streamed point-cloud services.</td>
+                    <td>Often requires preprocessing before public viewing.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </details>
+
+        <details class="reveal-card">
+          <summary class="reveal-summary">
+            <div>
+              <p class="summary-kicker">3D printing formats</p>
+              <h3>STL, 3MF, AMF, and G-code</h3>
+              <p>Open this when you need fabrication-focused formats and their preservation limits.</p>
+            </div>
+          </summary>
+          <div class="reveal-body">
+            <div class="format-table-wrap">
+              <table class="format-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Format</th>
+                    <th scope="col">Preservation pros</th>
+                    <th scope="col">Preservation cons</th>
+                    <th scope="col">Web/access pros</th>
+                    <th scope="col">Web/access cons</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">STL</th>
+                    <td>Very widely supported for fabrication workflows.</td>
+                    <td>Geometry only (no color, units, materials, or provenance).</td>
+                    <td>Easy to preview after conversion in many tools.</td>
+                    <td>Weak direct web accessibility and no rich context.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3MF</th>
+                    <td>Package can include units, materials, and print settings.</td>
+                    <td>Preservation quality depends on slicer/vendor feature compatibility.</td>
+                    <td>Better contextual print data than STL.</td>
+                    <td>Not a standard browser delivery format.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">AMF</th>
+                    <td>Designed to represent richer print semantics than STL.</td>
+                    <td>Lower real-world adoption and tool support.</td>
+                    <td>Can preserve more manufacturing context when supported.</td>
+                    <td>Limited interoperability for public access workflows.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">G-code</th>
+                    <td>Captures machine-ready print instructions for specific jobs.</td>
+                    <td>Device/profile dependent and not a reusable master geometry format.</td>
+                    <td>Useful for documenting print execution.</td>
+                    <td>Not suitable as a general public 3D access format.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <div class="callout">
+        You may also encounter CAD-style NURBS data or volumetric voxel datasets. They preserve different kinds of information than surface meshes, so they may need different repository rules and migration plans.
+      </div>
+    </section>
+
+    <section class="card area">
+      <h2 id="roles">5) Preservation masters vs access copies vs print files</h2>
+      <p>Preservation and delivery have different goals. Keep a master-plus-derivative workflow and retain original scan data whenever possible.</p>
+      <div class="tier">
+        <article class="tier-col">
+          <h3>Preservation master</h3>
+          <ul>
+            <li>Prioritize completeness and highest practical quality.</li>
+            <li>Typical formats: OBJ/PLY for meshes, E57 for point clouds, plus lossless textures.</li>
+            <li>Keep raw scan outputs and processing context alongside the master.</li>
+          </ul>
+        </article>
+        <article class="tier-col">
+          <h3>Access copy</h3>
+          <ul>
+            <li>Prioritize compatibility and performance for teaching/web reuse.</li>
+            <li>Typical formats: GLB/glTF or USDZ.</li>
+            <li>Generated from masters; never replace the master file set.</li>
+          </ul>
+        </article>
+        <article class="tier-col">
+          <h3>Print derivative</h3>
+          <ul>
+            <li>Prioritize manufacturability and slicer compatibility.</li>
+            <li>Typical formats: STL or 3MF, with print notes/profile context.</li>
+            <li>Treat print outputs as derivatives, not preservation authorities.</li>
+          </ul>
+        </article>
+      </div>
+      <div class="callout">
+        Obsolescence risk comes from missing context as much as missing files. Record units, coordinate systems, software versions, and key export decisions.
+      </div>
+      <h3>Obsolescence risks to monitor</h3>
+      <ul>
+        <li>Files survive in storage but become unusable because required software or plugins are no longer available.</li>
+        <li>Geometry remains but textures, material files, or coordinate context are separated or undocumented.</li>
+        <li>Teams lose track of why files were retained, which copy is authoritative, or how derivatives were produced.</li>
+        <li>Packages are never reopened after transfer, so broken links remain hidden until much later.</li>
+      </ul>
+    </section>
+
+    <section class="card area example-box">
+      <h2 id="unknown-names">6) What if you do not know the name?</h2>
+      <p>Never invent a false authoritative name. Use a placeholder you can defend.</p>
+      <h3>Option A - Descriptive placeholder</h3>
+      <pre class="codeblock"><code>InsectSpecimen_045_unknown_wing_fragment
+Machine_002_unknown_component_A
+</code></pre>
+      <h3>Option B - Functional description</h3>
+      <pre class="codeblock"><code>Machine_002_rotating_disc_component
+Artifact_014_small_curved_metal_piece
+</code></pre>
+      <h3>Option C - Controlled placeholder</h3>
+      <pre class="codeblock"><code>UnknownObject_001
+Unidentified_Component_003
+</code></pre>
+      <p class="note"><strong>Key rule:</strong> file names describe what you know. Metadata describes uncertainty.</p>
+    </section>
+
+    <section class="card area" id="project-vs-object">
+      <h2>7) Choose the structural model and plan for parts</h2>
+      <p>You have two valid structural models, and for complex machines you will often use both:</p>
+      <div class="tier">
+        <article class="tier-col">
+          <h3>Object-centric</h3>
+          <p>Best when the machine itself is the long-term intellectual object you care about.</p>
+        </article>
+        <article class="tier-col">
+          <h3>Project-centric</h3>
+          <p>Best for documenting workflow context for one campaign, survey, or time-bounded initiative.</p>
+        </article>
+      </div>
+      <p>If the machine is scanned within a larger survey, keep both contexts:</p>
+      <pre class="codeblock"><code>Projects/
+  FactorySurvey_2026/
+    Machine_12_WaterPump/
+
+Objects/
+  Mechanical/
+    WaterPump_001/
+</code></pre>
+      <ul>
+        <li><strong>Projects</strong> document workflow context and campaign activity.</li>
+        <li><strong>Objects</strong> document long-term intellectual identity.</li>
+      </ul>
+      <p class="note">Do not collapse these into one folder tree. For complex machines, use project structure for workflow and object structure for durable identity.</p>
+
+      <details class="reveal-card compact-reveal" id="object-parts">
+        <summary class="reveal-summary">
+          <div>
+            <p class="summary-kicker">Objects with parts</p>
+            <h3>Objects with Parts Tips</h3>
+            <p>Open this when you need parent assemblies, child parts, and relationship files to stay legible together.</p>
+          </div>
+        </summary>
+        <div class="reveal-body">
+          <p>If the machine is the intellectual "thing" you care about long-term, keep it as a parent object with child parts.</p>
+          <pre class="codeblock"><code>Objects/
+  Mechanical/
+    WaterPump_001/
+      assembly/
+        WaterPump_001_master_assembly_v01.pres.obj
+        assembly_metadata.txt
+      parts/
+        WP001_P01_Impeller/
+        WP001_P02_Housing/
+        WP001_P03_Shaft/
+      documentation/
+        metadata.txt
+        paradata.txt
+        rights_and_access.txt
+</code></pre>
+          <h3>Naming convention for parts</h3>
+          <p>Use a consistent part code:</p>
+          <pre class="codeblock"><code>WaterPump_001_P01_Impeller
+WaterPump_001_P02_Housing
+</code></pre>
+          <p>Pattern: <code>[ParentID]_P[##]_[PartName]</code></p>
+          <div class="explainer compact-explainer" data-explainer="part-pattern">
+            <div class="explainer-pattern" aria-label="Interactive part naming pattern">
+              <button type="button" class="explainer-token" data-explainer-target="parent-id">[ParentID]</button>
+              <span class="explainer-sep">_</span>
+              <button type="button" class="explainer-token" data-explainer-target="part-number">P[##]</button>
+              <span class="explainer-sep">_</span>
+              <button type="button" class="explainer-token" data-explainer-target="part-name">[PartName]</button>
+            </div>
+            <div class="explainer-panels">
+              <article class="explainer-panel" data-explainer-panel="parent-id">
+                <h3>ParentID</h3>
+                <p>Keeps every part visibly attached to its parent object so the relationship survives outside the folder tree.</p>
+              </article>
+              <article class="explainer-panel" data-explainer-panel="part-number">
+                <h3>P[##]</h3>
+                <p>A sequential code works well when physical or assembly order matters and helps machines sort parts correctly.</p>
+              </article>
+              <article class="explainer-panel" data-explainer-panel="part-name">
+                <h3>PartName</h3>
+                <p>Use a human-readable label for quick recognition. Keep it descriptive enough that people can identify the component without opening the file.</p>
+              </article>
+            </div>
+          </div>
+          <ul>
+            <li>If order matters physically, use sequential numbering.</li>
+            <li>If order does not matter, use functional labels.</li>
+          </ul>
+
+          <h3>Representing how parts fit together</h3>
+          <p>File structure alone is not enough. You need structural hierarchy, assembly metadata, and relationship documentation.</p>
+          <h4>A) Assembly folder in parent object</h4>
+          <pre class="codeblock"><code>assembly/
+  WaterPump_001_master_assembly_v01.pres.obj
+  assembly_relationships.json
+</code></pre>
+          <h4>B) Relationship metadata (recommended)</h4>
+          <pre class="codeblock"><code>{
+  "parent_object": "WaterPump_001",
+  "parts": [
+    {
+      "id": "WP001_P01_Impeller",
+      "connects_to": "WP001_P03_Shaft",
+      "connection_type": "rotational_fit",
+      "alignment_reference": "central_axis"
+    },
+    {
+      "id": "WP001_P02_Housing",
+      "contains": "WP001_P01_Impeller",
+      "connection_type": "enclosure"
+    }
+  ]
+}
+</code></pre>
+          <h4>C) Cross-reference inside each part metadata</h4>
+          <pre class="codeblock"><code>parent_object: WaterPump_001
+part_number: P01
+assembly_position: internal rotating component
+fits_with: WP001_P03_Shaft
+</code></pre>
+          <p class="note">This creates bidirectional traceability between parent assembly records and child part records.</p>
+        </div>
+      </details>
+    </section>
+
+    <section class="card area">
+      <h2 id="rules">8) Clean rules summary</h2>
+      <ol class="steps">
+        <li>Keep original capture outputs and preservation masters separate from access and print derivatives.</li>
+        <li>Every physical thing gets one object folder.</li>
+        <li>Every removable or distinct component gets a child object folder.</li>
+        <li>Assemblies define relationships, not filenames.</li>
+        <li>Unknown components use placeholders plus documented uncertainty.</li>
+        <li>Projects record workflow; objects record long-term identity.</li>
+      </ol>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="./js/loadHeader.js"></script>
+</body>
+</html>

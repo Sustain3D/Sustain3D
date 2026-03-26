@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sustain 3D - Storage</title>
+  <meta name="description" content="Storage and copying practices for small 3D repositories." />
+  <link rel="icon" href="./assets/Sustain3d_logoSmall.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="page-storage">
+  <div id="site-header"></div>
+
+  <main class="wrap">
+    <section class="card start-here">
+      <div class="next">
+        <span class="chip">You are on: Storage</span>
+        <a class="chip chip-link" href="./policies.html">Next: Policies</a>
+      </div>
+    </section>
+
+    <section class="card flow-banner goal-banner">
+      <h2>Goal</h2>
+      <p>Build a storage strategy that combines local, cloud, and repository options with clear governance, documentation, and sustainability planning so 3D assets remain accessible over time.</p>
+    </section>
+
+    <section class="card area">
+      <h2>1) Storage roles at a glance</h2>
+      <p>Storage only makes sense when each layer has a clear job. Hover or click the layers below to see what they are responsible for.</p>
+
+      <div class="explainer" data-explainer="storage-roles">
+        <div class="asset-pack" aria-label="Interactive storage roles">
+          <button type="button" class="asset-piece" data-explainer-target="role-working">Working copy</button>
+          <button type="button" class="asset-piece" data-explainer-target="role-independent">Independent copy</button>
+          <button type="button" class="asset-piece" data-explainer-target="role-cloud">Cloud collaboration</button>
+          <button type="button" class="asset-piece" data-explainer-target="role-repository">Repository deposit</button>
+        </div>
+        <div class="explainer-panels">
+          <article class="explainer-panel" data-explainer-panel="role-working">
+            <h3>Working copy</h3>
+            <p>This is the active project location where people capture, process, and export files. It should not be treated as the only preservation copy.</p>
+          </article>
+          <article class="explainer-panel" data-explainer-panel="role-independent">
+            <h3>Independent copy</h3>
+            <p>A separate copy protects against device failure, accidental deletion, and corruption. Independence matters more than convenience.</p>
+          </article>
+          <article class="explainer-panel" data-explainer-panel="role-cloud">
+            <h3>Cloud collaboration</h3>
+            <p>Cloud tools are useful for access and teamwork, but sync alone is not preservation because it can replicate deletions and corruption too.</p>
+          </article>
+          <article class="explainer-panel" data-explainer-panel="role-repository">
+            <h3>Repository deposit</h3>
+            <p>A repository adds governance, curation context, and often persistent identifiers. It is the best public-facing layer when long-term access matters.</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="callout">
+        Sync is not backup. The safest plans combine separated roles, not just repeated copies of the same behavior.
+      </div>
+    </section>
+
+    <section class="card area example-box">
+      <h2>2) Example storage plan</h2>
+      <p>Switch views to see how the same object can live across working, preservation, off-site, and repository layers without becoming a cluttered mess.</p>
+
+      <div class="window-shell" data-tabset>
+        <div class="window-bar">
+          <div class="window-tabs">
+            <button type="button" class="window-tab" data-tab-trigger="storage-working">Working</button>
+            <button type="button" class="window-tab" data-tab-trigger="storage-preservation">Preservation</button>
+            <button type="button" class="window-tab" data-tab-trigger="storage-offsite">Off-site copy</button>
+            <button type="button" class="window-tab" data-tab-trigger="storage-repository">Repository</button>
+          </div>
+          <strong class="window-title">Storage layers for one object</strong>
+        </div>
+
+        <section data-tab-panel="storage-working">
+          <div class="reveal-body split-grid">
+            <pre class="codeblock"><code>Projects/[Project_ID]/[Object_ID]/
+  01_raw_scans/
+  02_processing/
+  03_preservation/
+  04_access/
+</code></pre>
+            <div class="info-grid">
+              <div class="info-card"><h3>Primary role</h3><p>Active creation, editing, and collaboration.</p></div>
+              <div class="info-card"><h3>Main risk</h3><p>Too much change happens here for this to be your only preservation location.</p></div>
+            </div>
+          </div>
+        </section>
+
+        <section data-tab-panel="storage-preservation">
+          <div class="reveal-body split-grid">
+            <pre class="codeblock"><code>Preservation/[Project_ID]/[Object_ID]/
+  [Object_ID]__v##_raw/
+  [Object_ID]_v##_pres/
+  [Object_ID]_Metadata.txt
+</code></pre>
+            <div class="info-grid">
+              <div class="info-card"><h3>Primary role</h3><p>Authoritative local package for long-term retention.</p></div>
+              <div class="info-card"><h3>Main risk</h3><p>If it is stored in only one place, hardware loss can still wipe it out.</p></div>
+            </div>
+          </div>
+        </section>
+
+        <section data-tab-panel="storage-offsite">
+          <div class="reveal-body split-grid">
+            <pre class="codeblock"><code>Independent copy/
+  Preservation/[Project_ID]/[Object_ID]/
+  Preservation_Logs/storage_audit_log.csv
+</code></pre>
+            <div class="info-grid">
+              <div class="info-card"><h3>Primary role</h3><p>Protection against local disaster, theft, or media failure.</p></div>
+              <div class="info-card"><h3>Main risk</h3><p>If no one checks it, the copy may exist but still be unusable when needed.</p></div>
+            </div>
+          </div>
+        </section>
+
+        <section data-tab-panel="storage-repository">
+          <div class="reveal-body split-grid">
+            <pre class="codeblock"><code>Repository deposit/
+  preservation_package.zip
+  metadata record
+  DOI landing page
+</code></pre>
+            <div class="info-grid">
+              <div class="info-card"><h3>Primary role</h3><p>Long-term access, discoverability, governance, and citation.</p></div>
+              <div class="info-card"><h3>Main risk</h3><p>Identifiers only help when the repository itself has stable stewardship and funding.</p></div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="card area">
+      <h2>3) Open each storage option</h2>
+
+      <div class="reveal-stack">
+        <details class="reveal-card">
+          <summary class="reveal-summary">
+            <div>
+              <p class="summary-kicker">Storage option</p>
+              <h3>Local Storage</h3>
+              <p>Fast for active work, weak on its own.</p>
+            </div>
+          </summary>
+          <div class="reveal-body">
+            <div class="split-grid">
+              <div>
+                <h4>What it does well</h4>
+                <ul>
+                  <li>Supports active capture and processing.</li>
+                  <li>Keeps large files close to the people using them.</li>
+                </ul>
+                <div class="callout">Local storage should be where work happens, not where preservation stops.</div>
+              </div>
+              <div>
+                <h4>Where it fits</h4>
+                <p>External drives, lab servers, and departmental shares support everyday workflows, but they still need redundancy and clear documentation.</p>
+              </div>
+            </div>
+            <div class="tier">
+              <div class="tier-col"><h4>Good</h4><ul><li>Local storage is used for active work with at least one additional copy.</li><li>Copy destinations are documented.</li></ul></div>
+              <div class="tier-col"><h4>Better</h4><ul><li>Local copies are distributed across independent systems.</li><li>Validation and restore checks are scheduled.</li></ul></div>
+              <div class="tier-col"><h4>Best</h4><ul><li>Local storage is integrated with policy-driven redundancy.</li><li>Integrity monitoring and migration planning are tracked over time.</li></ul></div>
+            </div>
+          </div>
+        </details>
+
+        <details class="reveal-card">
+          <summary class="reveal-summary">
+            <div>
+              <p class="summary-kicker">Storage option</p>
+              <h3>Cloud Storage</h3>
+              <p>Helpful for collaboration, risky if treated as backup.</p>
+            </div>
+          </summary>
+          <div class="reveal-body">
+            <div class="split-grid">
+              <div>
+                <h4>What it does well</h4>
+                <ul>
+                  <li>Makes collaboration and access easier.</li>
+                  <li>Adds a geographically separate location.</li>
+                </ul>
+                <div class="callout">Synchronization can spread mistakes quickly. Keep critical preservation files outside the sync-only layer too.</div>
+              </div>
+              <div>
+                <h4>Where it fits</h4>
+                <p>Cloud platforms improve off-site resilience and sharing, but they need governance controls and exit planning.</p>
+              </div>
+            </div>
+            <div class="tier">
+              <div class="tier-col"><h4>Good</h4><ul><li>Cloud space is used for access and collaboration.</li><li>Critical files are also stored outside the sync platform.</li></ul></div>
+              <div class="tier-col"><h4>Better</h4><ul><li>Cloud workflows define versioning, roles, and retention practices.</li><li>Platform risks and cost growth are documented in planning.</li></ul></div>
+              <div class="tier-col"><h4>Best</h4><ul><li>Cloud storage is one layer in a multi-location preservation plan.</li><li>Exit strategy and migration pathways are documented in advance.</li></ul></div>
+            </div>
+          </div>
+        </details>
+
+        <details class="reveal-card">
+          <summary class="reveal-summary">
+            <div>
+              <p class="summary-kicker">Storage option</p>
+              <h3>Repository Deposit and DOI</h3>
+              <p>Best for long-term discovery and public-facing stewardship.</p>
+            </div>
+          </summary>
+          <div class="reveal-body">
+            <div class="split-grid">
+              <div>
+                <h4>What it does well</h4>
+                <ul>
+                  <li>Improves findability and citation.</li>
+                  <li>Adds stewardship expectations beyond one project folder.</li>
+                </ul>
+                <div class="callout">A DOI is a promise of managed access, not a substitute for preservation work.</div>
+              </div>
+              <div>
+                <h4>Where it fits</h4>
+                <p>Repositories and persistent identifiers matter most when governance, funding, and metadata quality support them.</p>
+              </div>
+            </div>
+            <div class="tier">
+              <div class="tier-col"><h4>Good</h4><ul><li>3D assets are deposited in a stable repository service.</li><li><code>doi_status</code> is tracked in project records.</li></ul></div>
+              <div class="tier-col"><h4>Better</h4><ul><li>DOIs are reserved before publication.</li><li>Landing page and metadata links are confirmed before release.</li></ul></div>
+              <div class="tier-col"><h4>Best</h4><ul><li>Repository governance and funding stability are considered in selection.</li><li>Identifier records stay synchronized with policy and metadata updates.</li></ul></div>
+            </div>
+          </div>
+        </details>
+
+        <details class="reveal-card">
+          <summary class="reveal-summary">
+            <div>
+              <p class="summary-kicker">Storage option</p>
+              <h3>One Combined Plan</h3>
+              <p>Storage only works when the layers support each other.</p>
+            </div>
+          </summary>
+          <div class="reveal-body">
+            <div class="split-grid">
+              <div>
+                <h4>What to budget for</h4>
+                <ul>
+                  <li>Storage media and subscription costs</li>
+                  <li>Metadata and documentation labor</li>
+                  <li>Copy validation, migration, and user support time</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Where it fits</h4>
+                <p>The strongest plans combine local workflow storage, independent copies, and repository deposit with realistic staffing and cost planning.</p>
+              </div>
+            </div>
+            <div class="tier">
+              <div class="tier-col"><h4>Good</h4><ul><li>One local working location plus one independent copy.</li><li>Basic documentation of responsibilities and locations.</li></ul></div>
+              <div class="tier-col"><h4>Better</h4><ul><li>Local, cloud/off-site, and repository roles are clearly separated.</li><li>Costs and staffing needs are planned annually.</li></ul></div>
+              <div class="tier-col"><h4>Best</h4><ul><li>Storage, governance, and funding are treated as one long-term stewardship program.</li><li>Planned migration and continuity workflows are maintained over time.</li></ul></div>
+            </div>
+          </div>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="./js/loadHeader.js"></script>
+</body>
+</html>

@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sustain 3D - In Practice</title>
+  <meta name="description" content="Case study page for applied Sustain 3D workflow implementation." />
+  <link rel="icon" href="./assets/Sustain3d_logoSmall.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="page-practice">
+  <div id="site-header"></div>
+
+  <main class="wrap">
+    <section class="card start-here">
+      <div class="next">
+        <span class="chip">You are on: In Practice</span>
+        <a class="chip chip-link" href="./workflow.html">Back to: Workflow</a>
+      </div>
+    </section>
+
+    <section class="card goal-banner">
+      <h2>In Practice: TREC Cooper Hawk Case Study</h2>
+      <p>This page documents how the Sustain 3D workflow was applied in practice for the Tom Ridge Environmental Center (TREC) Cooper Hawk specimen.</p>
+    </section>
+
+    <section class="card area">
+      <h2>1) Project snapshot</h2>
+      <div class="info-grid">
+        <article class="info-card">
+          <h3>Project</h3>
+          <p>TREC Specimen Scans (<code>TREC_SpecimenScans_2026</code>)</p>
+        </article>
+        <article class="info-card">
+          <h3>Case focus</h3>
+          <p>Cooper Hawk specimen (<code>TREC_0001_CooperHawk</code>)</p>
+        </article>
+        <article class="info-card">
+          <h3>Capture hardware</h3>
+          <p>Artec Space Spider</p>
+        </article>
+        <article class="info-card">
+          <h3>Processing software</h3>
+          <p>Artec Studio 17 Professional, then Blender for access optimization</p>
+        </article>
+        <article class="info-card">
+          <h3>Naming basis</h3>
+          <p>VAR Lab pattern <code>TREC_XXXX_&lt;SpecimenName&gt;</code></p>
+        </article>
+        <article class="info-card">
+          <h3>Publication status</h3>
+          <p>Access copy published; preservation package prepared for DOI workflow</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="card area">
+      <h2>2) How the workflow played out</h2>
+      <div class="reveal-stack">
+        <details class="reveal-card" open>
+          <summary class="reveal-summary">
+            <div>
+              <p class="summary-kicker">Capture</p>
+              <h3>Raw scans were created from the specimen</h3>
+              <p>The object entered the project as structured-light scan data.</p>
+            </div>
+          </summary>
+          <div class="reveal-body">
+            <ol class="steps">
+              <li>TREC provided the specimen model for scanning.</li>
+              <li>Raw scans and exported high-resolution OBJ were created from Artec Space Spider capture.</li>
+            </ol>
+          </div>
+        </details>
+
+        <details class="reveal-card">
+          <summary class="reveal-summary">
+            <div>
+              <p class="summary-kicker">Processing</p>
+              <h3>Raw and preservation packages were retained</h3>
+              <p>Working files stayed in project folders while the master and access paths were separated.</p>
+            </div>
+          </summary>
+          <div class="reveal-body">
+            <ol class="steps">
+              <li>Raw and preservation packages were retained, and a smaller web-access model was derived.</li>
+              <li>Blender working files were kept in project processing folders.</li>
+            </ol>
+          </div>
+        </details>
+
+        <details class="reveal-card">
+          <summary class="reveal-summary">
+            <div>
+              <p class="summary-kicker">Publication</p>
+              <h3>The access derivative was released separately</h3>
+              <p>The public-facing model was treated as an access copy, not the preservation authority.</p>
+            </div>
+          </summary>
+          <div class="reveal-body">
+            <ol class="steps">
+              <li>Access GLB was published to Sketchfab.</li>
+              <li>Preservation master package and metadata were copied into repository preservation storage for long-term retention.</li>
+            </ol>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section class="card area example-box">
+      <h2>3) Workspace vs preservation storage</h2>
+      <p>Switch between the active project view and the long-term preservation view to see how the same object was organized.</p>
+
+      <div class="window-shell" data-tabset>
+        <div class="window-bar">
+          <div class="window-tabs">
+            <button type="button" class="window-tab" data-tab-trigger="practice-workspace">Project workspace</button>
+            <button type="button" class="window-tab" data-tab-trigger="practice-preservation">Preservation storage</button>
+          </div>
+          <strong class="window-title">Case study folder views</strong>
+        </div>
+
+        <section data-tab-panel="practice-workspace">
+          <div class="file-explorer-body" data-explainer="practice-workspace">
+            <div class="file-tree">
+              <button type="button" class="tree-node" data-explainer-target="practice-raw"><span class="node-kind">DIR</span>01_raw_scans/</button>
+              <button type="button" class="tree-node" data-explainer-target="practice-processing"><span class="node-kind">DIR</span>02_processing/</button>
+              <button type="button" class="tree-node" data-explainer-target="practice-master"><span class="node-kind">DIR</span>03_preservation/</button>
+              <button type="button" class="tree-node" data-explainer-target="practice-access"><span class="node-kind">DIR</span>04_access/</button>
+              <button type="button" class="tree-node" data-explainer-target="practice-docs"><span class="node-kind">DIR</span>documentation/</button>
+            </div>
+            <div class="tree-detail">
+              <article class="explainer-panel" data-explainer-panel="practice-raw">
+                <h3>01_raw_scans/</h3>
+                <p>Stored <code>TREC_0001_CooperHawk__v01_raw/</code> as the untouched capture package from the scanner workflow.</p>
+              </article>
+              <article class="explainer-panel" data-explainer-panel="practice-processing">
+                <h3>02_processing/</h3>
+                <p>Held the Blender working directory and other in-progress files used to prepare access outputs.</p>
+              </article>
+              <article class="explainer-panel" data-explainer-panel="practice-master">
+                <h3>03_preservation/</h3>
+                <p>Contained <code>TREC_0001_CooperHawk_v01_pres/</code>, the preservation-ready export prepared for handoff.</p>
+              </article>
+              <article class="explainer-panel" data-explainer-panel="practice-access">
+                <h3>04_access/</h3>
+                <p>Stored <code>TREC_0001_CooperHawk_v01_access.glb</code>, the smaller access derivative for publication.</p>
+              </article>
+              <article class="explainer-panel" data-explainer-panel="practice-docs">
+                <h3>documentation/</h3>
+                <p>Held the metadata and paradata notes that explained how the case study package was created.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section data-tab-panel="practice-preservation">
+          <div class="file-explorer-body" data-explainer="practice-preservation">
+            <div class="file-tree">
+              <button type="button" class="tree-node" data-explainer-target="practice-pres-raw"><span class="node-kind">DIR</span>TREC_0001_CooperHawk__v01_raw/</button>
+              <button type="button" class="tree-node" data-explainer-target="practice-pres-master"><span class="node-kind">DIR</span>TREC_0001_CooperHawk_v01_pres/</button>
+              <button type="button" class="tree-node" data-explainer-target="practice-pres-meta"><span class="node-kind">FILE</span>TREC_0001_CooperHawk_Metadata.txt</button>
+            </div>
+            <div class="tree-detail">
+              <article class="explainer-panel" data-explainer-panel="practice-pres-raw">
+                <h3>Raw package</h3>
+                <p>This retained the original capture outputs as the closest record of the scanning event.</p>
+              </article>
+              <article class="explainer-panel" data-explainer-panel="practice-pres-master">
+                <h3>Preservation master package</h3>
+                <p>This was the authoritative long-term package for the processed model.</p>
+              </article>
+              <article class="explainer-panel" data-explainer-panel="practice-pres-meta">
+                <h3>Metadata file</h3>
+                <p>The metadata note preserved context, rights, scale, and processing decisions so the package can be interpreted later.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+      </div>
+      <p class="note">This handoff kept working directories lean while preserving the full archival package in dedicated preservation storage.</p>
+    </section>
+
+    <section class="card area example-box">
+      <h2>4) Metadata used for this object</h2>
+      <div class="doc-layout" data-explainer="practice-metadata">
+        <article class="doc-page doc-paper">
+          <div class="doc-heading">
+            <p class="doc-kicker">Case study metadata</p>
+            <h3>TREC_0001_CooperHawk</h3>
+            <p>Selected fields from the object record</p>
+          </div>
+
+          <div class="doc-line">
+            <button type="button" class="doc-field" data-explainer-target="practice-meta-method">capture_method</button>
+            <span>Structured Light (Artec Space Spider)</span>
+          </div>
+          <div class="doc-line">
+            <button type="button" class="doc-field" data-explainer-target="practice-meta-software">software_environment</button>
+            <span>Artec Studio 17 Professional; Blender</span>
+          </div>
+          <div class="doc-line">
+            <button type="button" class="doc-field" data-explainer-target="practice-meta-scale">scale_units</button>
+            <span>millimeters (mm)</span>
+          </div>
+          <div class="doc-line">
+            <button type="button" class="doc-field" data-explainer-target="practice-meta-master">preservation_master</button>
+            <span>TREC_0001_CooperHawk_v01_pres.obj</span>
+          </div>
+          <div class="doc-line">
+            <button type="button" class="doc-field" data-explainer-target="practice-meta-access">access_files</button>
+            <span>TREC_0001_CooperHawk_v01_access.glb</span>
+          </div>
+          <div class="doc-line">
+            <button type="button" class="doc-field" data-explainer-target="practice-meta-rights">rights</button>
+            <span>Digital scan copyright 2026 VAR Lab; physical specimen property of TREC</span>
+          </div>
+          <div class="doc-line">
+            <button type="button" class="doc-field" data-explainer-target="practice-meta-access-level">access_level</button>
+            <span>internal</span>
+          </div>
+          <div class="doc-line">
+            <button type="button" class="doc-field" data-explainer-target="practice-meta-paradata">paradata</button>
+            <span>Multi-pass structured light scan; aligned in Artec Studio 17; minor hole filling only; no reconstruction</span>
+          </div>
+        </article>
+
+        <div class="tree-detail">
+          <article class="explainer-panel" data-explainer-panel="practice-meta-method">
+            <h3>capture_method</h3>
+            <p>This makes the technical origin of the case study explicit and helps future users interpret the dataset correctly.</p>
+          </article>
+          <article class="explainer-panel" data-explainer-panel="practice-meta-software">
+            <h3>software_environment</h3>
+            <p>Software history matters because vendor tools and versions can affect future access and reconstruction.</p>
+          </article>
+          <article class="explainer-panel" data-explainer-panel="practice-meta-scale">
+            <h3>scale_units</h3>
+            <p>Scale is essential for measurement, print reuse, and future comparison work.</p>
+          </article>
+          <article class="explainer-panel" data-explainer-panel="practice-meta-master">
+            <h3>preservation_master</h3>
+            <p>This identifies the authoritative processed file rather than the public-facing access copy.</p>
+          </article>
+          <article class="explainer-panel" data-explainer-panel="practice-meta-access">
+            <h3>access_files</h3>
+            <p>The access derivative is a separate deliverable made for viewing and sharing.</p>
+          </article>
+          <article class="explainer-panel" data-explainer-panel="practice-meta-rights">
+            <h3>rights</h3>
+            <p>This case clearly distinguishes digital scan copyright from ownership of the physical specimen.</p>
+          </article>
+          <article class="explainer-panel" data-explainer-panel="practice-meta-access-level">
+            <h3>access_level</h3>
+            <p>The metadata records that the preservation package is not automatically the same thing as the published access copy.</p>
+          </article>
+          <article class="explainer-panel" data-explainer-panel="practice-meta-paradata">
+            <h3>paradata</h3>
+            <p>This is the record of scanning and processing decisions that shaped the final model.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="card area">
+      <h2>5) Access copy publication</h2>
+      <div class="reveal-stack">
+        <details class="reveal-card">
+          <summary class="reveal-summary">
+            <div>
+              <p class="summary-kicker">Public access copy</p>
+              <h3>View the Sketchfab derivative</h3>
+              <p>The embedded model is an access layer, not the preservation master.</p>
+            </div>
+          </summary>
+          <div class="reveal-body">
+            <div class="sketchfab-embed-wrapper">
+              <iframe
+                title="Cooper Hawk Scan"
+                frameborder="0"
+                allowfullscreen
+                mozallowfullscreen="true"
+                webkitallowfullscreen="true"
+                allow="autoplay; fullscreen; xr-spatial-tracking"
+                xr-spatial-tracking
+                execution-while-out-of-viewport
+                execution-while-not-rendered
+                web-share
+                width="100%"
+                height="480"
+                src="https://sketchfab.com/models/b39e4afc76a443c0992a06d6d111a4fe/embed">
+              </iframe>
+              <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;">
+                <a href="https://sketchfab.com/3d-models/cooper-hawk-scan-b39e4afc76a443c0992a06d6d111a4fe?utm_medium=embed&utm_campaign=share-popup&utm_content=b39e4afc76a443c0992a06d6d111a4fe" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Cooper Hawk Scan</a>
+                by
+                <a href="https://sketchfab.com/varlab?utm_medium=embed&utm_campaign=share-popup&utm_content=b39e4afc76a443c0992a06d6d111a4fe" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">VAR Lab</a>
+                on
+                <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=b39e4afc76a443c0992a06d6d111a4fe" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a>.
+              </p>
+            </div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section class="card area">
+      <h2>6) Preservation and storage status</h2>
+      <div class="info-grid">
+        <article class="info-card">
+          <h3>Preservation package</h3>
+          <p>Prepared for Zenodo DOI workflow.</p>
+        </article>
+        <article class="info-card">
+          <h3>Current storage strategy</h3>
+          <p>Google Drive for remote access, local storage, and separate deep local storage.</p>
+        </article>
+        <article class="info-card">
+          <h3>Tracking record</h3>
+          <p>Project-level policy and publication tracking maintained in <code>Metadata/project_registry.json</code>.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="./js/loadHeader.js"></script>
+</body>
+</html>
