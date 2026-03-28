@@ -129,15 +129,15 @@ CoopersHawk_001_web_20260224_v01_access.glb
         <div class="reveal-body">
       <p>The thesis treats 3D data as a compound object. Below are the pieces that may need to travel together:</p>
 
-      <div class="explainer asset-explainer" data-explainer="asset-package">
-        <div class="asset-pack" aria-label="Interactive 3D asset package">
-          <button type="button" class="asset-piece" data-explainer-target="asset-geometry"><strong>.OBJ</strong><span>Geometry mesh</span></button>
-          <button type="button" class="asset-piece" data-explainer-target="asset-textures"><strong>.tiif</strong><span>Texture image</span></button>
-          <button type="button" class="asset-piece" data-explainer-target="asset-materials"><strong>.mtl</strong><span>Material links</span></button>
-          <button type="button" class="asset-piece" data-explainer-target="asset-scene"><strong>.json</strong><span>Scene or assembly data</span></button>
-          <button type="button" class="asset-piece" data-explainer-target="asset-metadata"><strong>Metadata.txt</strong><span>Object metadata</span></button>
-          <button type="button" class="asset-piece" data-explainer-target="asset-paradata"><strong>paradata.txt</strong><span>Process notes</span></button>
-        </div>
+        <div class="explainer asset-explainer" data-explainer="asset-package">
+          <div class="asset-pack" aria-label="Interactive 3D asset package">
+            <button type="button" class="asset-piece" data-explainer-target="asset-geometry"><strong>.OBJ</strong><span>Geometry mesh</span></button>
+            <button type="button" class="asset-piece" data-explainer-target="asset-textures"><strong>.PNG</strong><span>Texture image</span></button>
+            <button type="button" class="asset-piece" data-explainer-target="asset-materials"><strong>.mtl</strong><span>Material links</span></button>
+            <button type="button" class="asset-piece" data-explainer-target="asset-scene"><strong>.json</strong><span>Scene or assembly data</span></button>
+            <button type="button" class="asset-piece" data-explainer-target="asset-metadata"><strong>Metadata.txt</strong><span>Object metadata</span></button>
+            <button type="button" class="asset-piece" data-explainer-target="asset-paradata"><strong>paradata.txt</strong><span>Process notes</span></button>
+          </div>
 
         <div class="explainer-panels">
           <article class="explainer-panel" data-explainer-panel="asset-geometry">
@@ -146,7 +146,7 @@ CoopersHawk_001_web_20260224_v01_access.glb
           </article>
           <article class="explainer-panel" data-explainer-panel="asset-textures">
             <h3>Texture image</h3>
-            <p><strong>CoopersHawk_001_feather_diffuse.tif</strong> carries color and surface detail. If it gets separated from the mesh and material file, the model may open with the right shape but the wrong appearance.</p>
+            <p><strong>CoopersHawk_001_feather_diffuse.png</strong> carries color and surface detail. If it gets separated from the mesh and material file, the model may open with the right shape but the wrong appearance.</p>
           </article>
           <article class="explainer-panel" data-explainer-panel="asset-materials">
             <h3>Material links</h3>
@@ -170,11 +170,54 @@ CoopersHawk_001_web_20260224_v01_access.glb
       <pre class="codeblock"><code>CoopersHawk_001_preservation_package/
   geometry/CoopersHawk_001_master_assembly_v03.obj
   materials/CoopersHawk_001_master_assembly_v03.mtl
-  textures/CoopersHawk_001_feather_diffuse.tif
+  textures/CoopersHawk_001_feather_diffuse.png
   metadata/object_metadata.txt
   metadata/paradata.txt
   assembly/assembly_relationships.json
 </code></pre>
+
+      <p class="note">Each preview below opens the full image in a new tab, and each card has its own direct page link for sharing.</p>
+      <div class="linked-media-grid">
+        <figure class="linked-media-card" id="cooperhawk-mesh-example">
+          <a class="linked-media-link" href="./assets/CooperHawk_Mesh.png" target="_blank" rel="noreferrer">
+            <img src="./assets/CooperHawk_Mesh.png" alt="Mesh-only view of the Cooper's Hawk OBJ model." />
+          </a>
+          <figcaption class="linked-media-body">
+            <h4>OBJ mesh preview</h4>
+            <p>The mesh image shows the geometry structure the OBJ carries before texture and material interpretation are applied.</p>
+            <div class="linked-media-actions">
+              <a href="./assets/CooperHawk_Mesh.png" target="_blank" rel="noreferrer">Open full image</a>
+              <a href="#cooperhawk-mesh-example">Link to this figure</a>
+            </div>
+          </figcaption>
+        </figure>
+        <figure class="linked-media-card" id="cooperhawk-texture-example">
+          <a class="linked-media-link" href="./assets/CooperHawk_Texture.png" target="_blank" rel="noreferrer">
+            <img src="./assets/CooperHawk_Texture.png" alt="Texture PNG used with the Cooper's Hawk model." />
+          </a>
+          <figcaption class="linked-media-body">
+            <h4>PNG texture preview</h4>
+            <p>The texture image supplies the surface color data that the material file maps back onto the mesh.</p>
+            <div class="linked-media-actions">
+              <a href="./assets/CooperHawk_Texture.png" target="_blank" rel="noreferrer">Open full image</a>
+              <a href="#cooperhawk-texture-example">Link to this figure</a>
+            </div>
+          </figcaption>
+        </figure>
+        <figure class="linked-media-card" id="cooperhawk-material-example">
+          <a class="linked-media-link" href="./assets/CooperHawk_Material.png" target="_blank" rel="noreferrer">
+            <img src="./assets/CooperHawk_Material.png" alt="Rendered material view of the Cooper's Hawk model." />
+          </a>
+          <figcaption class="linked-media-body">
+            <h4>MTL rendered preview</h4>
+            <p>This rendered view represents the appearance produced when the material instructions successfully connect the mesh to its texture.</p>
+            <div class="linked-media-actions">
+              <a href="./assets/CooperHawk_Material.png" target="_blank" rel="noreferrer">Open full image</a>
+              <a href="#cooperhawk-material-example">Link to this figure</a>
+            </div>
+          </figcaption>
+        </figure>
+      </div>
 
       <ul>
         <li>Keep linked sidecars together as one identifiable package.</li>
@@ -414,6 +457,36 @@ CoopersHawk_001_web_20260224_v01_access.glb
         <li>Teams lose track of why files were retained, which copy is authoritative, or how derivatives were produced.</li>
         <li>Packages are never reopened after transfer, so broken links remain hidden until much later.</li>
       </ul>
+      <h3>Example: how decimation changes an access copy</h3>
+      <p>In both comparison views below, the left model is the access copy at 10,000 faces and 5.65 MB, while the right model is the preservation model at 1,000,000 faces and 107 MB.</p>
+      <div class="linked-media-grid">
+        <figure class="linked-media-card" id="cooperhawk-decimation-model">
+          <a class="linked-media-link" href="./assets/CooperHawk_Decimation_Model.png" target="_blank" rel="noreferrer">
+            <img src="./assets/CooperHawk_Decimation_Model.png" alt="Side-by-side shaded comparison of access and preservation Cooper's Hawk models, with the access copy on the left and preservation model on the right." />
+          </a>
+          <figcaption class="linked-media-body">
+            <h4>Shaded model comparison</h4>
+            <p>This view shows how an access derivative can stay visually useful while carrying far fewer faces than the preservation master.</p>
+            <div class="linked-media-actions">
+              <a href="./assets/CooperHawk_Decimation_Model.png" target="_blank" rel="noreferrer">Open full image</a>
+              <a href="#cooperhawk-decimation-model">Link to this figure</a>
+            </div>
+          </figcaption>
+        </figure>
+        <figure class="linked-media-card" id="cooperhawk-decimation-wireframe">
+          <a class="linked-media-link" href="./assets/CooperHawk_Decimation_Wireframe.png" target="_blank" rel="noreferrer">
+            <img src="./assets/CooperHawk_Decimation_Wireframe.png" alt="Side-by-side wireframe comparison of access and preservation Cooper's Hawk models, with the access copy on the left and preservation model on the right." />
+          </a>
+          <figcaption class="linked-media-body">
+            <h4>Wireframe comparison</h4>
+            <p>The wireframe view makes the reduction in mesh density explicit, which is useful when documenting how the access copy was derived.</p>
+            <div class="linked-media-actions">
+              <a href="./assets/CooperHawk_Decimation_Wireframe.png" target="_blank" rel="noreferrer">Open full image</a>
+              <a href="#cooperhawk-decimation-wireframe">Link to this figure</a>
+            </div>
+          </figcaption>
+        </figure>
+      </div>
     </section>
 
     <section class="card area example-box">

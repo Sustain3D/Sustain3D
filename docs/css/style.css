@@ -49,7 +49,7 @@ h1 { margin: 0; font-size: 20px; }
 header h1 { color: #fff; }
 header p { margin: 2px 0 0; color: #d5dde7; font-size: 14px; }
 
-nav { display: flex; flex-wrap: wrap; gap: 10px; padding: 0 0 14px; }
+nav { display: flex; flex-wrap: wrap; gap: 10px; padding: 0 0 14px; justify-content: center; }
 nav a {
   color: var(--text);
   text-decoration: none;
@@ -525,6 +525,23 @@ footer a {
 
 .resource-group h3 { margin-top: 0; }
 .resource-group ul { margin: 0; padding-left: 18px; }
+
+body.page-resources main a {
+  color: #f1d2b2;
+  text-decoration-color: rgba(241,210,178,.68);
+  text-underline-offset: 2px;
+}
+
+body.page-resources main a:hover,
+body.page-resources main a:focus-visible {
+  color: #fff2e5;
+  text-decoration-color: currentColor;
+}
+
+body.page-resources .start-here .chip-link {
+  color: var(--text);
+  text-decoration: none;
+}
 
 .glossary { display: grid; grid-template-columns: 1fr; gap: 10px; }
 
@@ -1048,6 +1065,73 @@ footer a {
   display: grid;
   gap: 14px;
   padding: 16px;
+}
+
+.linked-media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+}
+
+.linked-media-card {
+  margin: 0;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(255,255,255,.03);
+  scroll-margin-top: 130px;
+}
+
+.linked-media-card:target {
+  border-color: var(--page-accent, var(--accent));
+  box-shadow: 0 0 0 1px var(--page-accent, var(--accent));
+}
+
+.linked-media-link {
+  display: block;
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,.08), transparent 45%),
+    #0b0d12;
+}
+
+.linked-media-link img {
+  display: block;
+  width: 100%;
+  height: 240px;
+  object-fit: contain;
+}
+
+.linked-media-body {
+  display: grid;
+  gap: 8px;
+  padding: 12px;
+}
+
+.linked-media-body h4 {
+  margin: 0;
+}
+
+.linked-media-body p {
+  margin: 0;
+}
+
+.linked-media-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 13px;
+}
+
+.linked-media-actions a {
+  color: var(--page-accent, var(--accent));
+  text-decoration-color: rgba(255,255,255,.35);
+  text-decoration-thickness: 1px;
+}
+
+.linked-media-actions a:hover,
+.linked-media-actions a:focus-visible {
+  color: #fff;
+  text-decoration-color: currentColor;
 }
 
 .split-grid {
