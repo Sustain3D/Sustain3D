@@ -108,10 +108,44 @@
 </header>`;
 
   const footerFallback = `<footer>
-  <div class="wrap">
-    <span>&copy; <span id="year"></span> Sustain 3D - Licensed under <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noreferrer">Creative Commons CC0 1.0 Universal</a></span>
+  <div class="wrap footer-shell">
+    <div class="footer-meta-row">
+      <p class="footer-meta">
+        &copy; <span id="year"></span> Sustain 3D by
+        <a href="https://remingtonorange.com" target="_blank" rel="noopener noreferrer">Remington Orange</a>
+        - Licensed under
+        <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noreferrer">Creative Commons CC0 1.0 Universal</a>
+      </p>
+      <p class="footer-last-updated">Last Updated <span id="last-updated"></span></p>
+    </div>
+
+    <details class="footer-citation">
+      <summary class="footer-cite-toggle">How to cite</summary>
+      <div class="footer-citation-body">
+        <p class="summary-kicker">Suggested Citation</p>
+        <p class="footer-citation-text" id="site-citation-text"></p>
+        <p class="note">Homepage: <a class="footer-site-link" id="site-home-link" href="./index.html">./index.html</a></p>
+        <p class="note">Creator: <a href="https://remingtonorange.com" target="_blank" rel="noopener noreferrer">Remington Orange</a></p>
+        <div class="template-actions">
+          <button class="btn secondary" type="button" id="copy-site-citation">Copy citation</button>
+        </div>
+      </div>
+    </details>
   </div>
 </footer>`;
+
+  const siteCitation = {
+    author: "Remington Orange",
+    title: "Sustain 3D: Practical 3D Data Preservation",
+    publisher: "Sustain 3D",
+    lastUpdated: "2026-04-16"
+  };
+
+  const displayDate = new Intl.DateTimeFormat("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric"
+  }).format(new Date(`${siteCitation.lastUpdated}T12:00:00`));
 
   const setActiveNav = () => {
     const current = window.location.pathname.split("/").pop() || "index.html";
@@ -142,6 +176,48 @@
         }, 1400);
       });
     });
+  };
+
+  const setFooterMeta = () => {
+    const year = document.getElementById("year");
+    if (year) year.textContent = new Date().getFullYear();
+
+    const lastUpdated = document.getElementById("last-updated");
+    if (lastUpdated) lastUpdated.textContent = displayDate;
+
+    const homepageUrl = window.location.protocol === "file:"
+      ? "./index.html"
+      : new URL("./index.html", window.location.href).href;
+    const citationText = `${siteCitation.author}. "${siteCitation.title}." ${siteCitation.publisher}, last updated ${displayDate}.`;
+    const copyText = window.location.protocol === "file:"
+      ? citationText
+      : `${citationText} ${homepageUrl}`;
+
+    const citationEl = document.getElementById("site-citation-text");
+    if (citationEl) citationEl.textContent = citationText;
+
+    const homepageLink = document.getElementById("site-home-link");
+    if (homepageLink) {
+      homepageLink.href = homepageUrl;
+      homepageLink.textContent = homepageUrl;
+    }
+
+    const copyBtn = document.getElementById("copy-site-citation");
+    if (copyBtn) {
+      copyBtn.addEventListener("click", async () => {
+        const previousText = copyBtn.textContent;
+        try {
+          await navigator.clipboard.writeText(copyText);
+          copyBtn.textContent = "Copied";
+        } catch (e) {
+          copyBtn.textContent = "Copy failed";
+          console.warn("Clipboard write failed.", e);
+        }
+        setTimeout(() => {
+          copyBtn.textContent = previousText;
+        }, 1200);
+      });
+    }
   };
 
   const setTabState = (root, target) => {
@@ -190,6 +266,15 @@
       panel.hidden = !active;
       panel.classList.toggle("is-active", active);
     });
+
+  };
+
+  const syncExplainersForJumpTarget = (targetId) => {
+    document.querySelectorAll(`[data-jump-target="${targetId}"][data-explainer-target]`).forEach((trigger) => {
+      const root = trigger.closest("[data-explainer]");
+      const explainerTarget = trigger.getAttribute("data-explainer-target");
+      if (root && explainerTarget) setExplainerState(root, explainerTarget);
+    });
   };
 
   const initExplainers = () => {
@@ -229,6 +314,8 @@
         const disclosure = target.matches("details") ? target : target.closest("details");
         if (disclosure) disclosure.open = true;
 
+        syncExplainersForJumpTarget(targetId);
+
         if (window.history && window.history.replaceState) {
           window.history.replaceState(null, "", `#${targetId}`);
         } else {
@@ -256,6 +343,8 @@
 
     const details = target.matches("details") ? target : target.closest("details");
     if (details) details.open = true;
+
+    if (target.id) syncExplainersForJumpTarget(target.id);
   };
 
   const escapeRegExp = (text) => text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
@@ -364,9 +453,7 @@
       footerMount.innerHTML = footerFallback;
       console.warn("Footer partial load failed; using fallback.", e);
     }
-
-    const year = document.getElementById("year");
-    if (year) year.textContent = new Date().getFullYear();
+    setFooterMeta();
   }
 
   bindTemplateCopyButtons();

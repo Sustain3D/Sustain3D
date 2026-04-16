@@ -161,6 +161,102 @@ footer a {
   color: var(--text);
 }
 
+.footer-shell {
+  display: grid;
+  gap: 12px;
+}
+
+.footer-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 18px;
+  flex-wrap: wrap;
+}
+
+.footer-meta,
+.footer-last-updated {
+  margin: 0;
+}
+
+.footer-meta {
+  max-width: 760px;
+}
+
+.footer-last-updated {
+  white-space: nowrap;
+}
+
+.footer-citation {
+  display: grid;
+  gap: 10px;
+}
+
+.footer-citation summary {
+  list-style: none;
+}
+
+.footer-citation summary::-webkit-details-marker {
+  display: none;
+}
+
+.footer-cite-toggle {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text);
+  cursor: pointer;
+  font-weight: 600;
+  background: transparent;
+}
+
+.footer-cite-toggle:hover,
+.footer-cite-toggle:focus-visible,
+.footer-citation[open] .footer-cite-toggle {
+  border-color: rgba(255,255,255,.2);
+  background: rgba(255,255,255,.05);
+}
+
+.footer-cite-toggle::after {
+  content: "+";
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--page-accent, var(--accent));
+  font-weight: 700;
+}
+
+.footer-citation[open] .footer-cite-toggle::after {
+  content: "-";
+}
+
+.footer-citation-body {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px 16px 16px;
+  background: rgba(255,255,255,.03);
+}
+
+.footer-citation-body > *:first-child {
+  margin-top: 0;
+}
+
+.footer-citation-text {
+  color: var(--text);
+}
+
+.footer-site-link {
+  word-break: break-all;
+}
+
 .start-here {
   display: flex;
   align-items: center;
@@ -1296,4 +1392,6 @@ body.page-practice { --page-accent: var(--practice); }
   .workflow-track { grid-template-columns: 1fr; }
   .step-grid { grid-template-columns: 1fr; }
   .audience-grid { grid-template-columns: 1fr; }
+  .footer-meta-row { align-items: flex-start; }
+  .footer-last-updated { white-space: normal; }
 }
